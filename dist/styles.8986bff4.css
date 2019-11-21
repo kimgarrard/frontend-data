@@ -1,0 +1,65 @@
+body {
+  margin: 0px;
+  overflow: hidden;
+  background-color: #c5faf4;
+  background-color: white;
+}
+
+h1 {
+	font-family: Copperplate, Arial;
+  font-size: 2.5em;
+}
+
+div {
+  display: flex;
+  justify-content: center;
+  padding: 0.5em;
+}
+
+.sphere {
+  fill: #c5faf4;
+  width: 100%;
+}
+
+.country {
+  fill: #a1a1a1;
+  stroke: white;
+  stroke-width: 0.2;
+  overflow: hidden;
+  width: 100%;
+}
+
+.country:hover{
+	cursor: pointer;
+  fill: gray;
+}
+
+svg {
+  width: 100vw;
+  height: 100vw;
+}
+
+imageDiv {
+  fill: white;
+	stroke: black;
+  stroke-width: .5;
+}
+
+.images {
+  width: 2em;
+  height: 2em;
+  mix-blend-mode: luminosity;
+}
+
+.images:hover {
+  mix-blend-mode: normal;
+}
+
+.tekst {
+  position: absolute;
+  font-size: 2em;
+}
+
+
+
+/*# sourceMappingURL=/styles.8986bff4.css.map */
