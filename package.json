@@ -1,8 +1,17 @@
 {
+  "name": "frontend-data",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
   "scripts": {
-    "build": "rollup -c"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "devDependencies": {
-    "rollup": "latest"
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "babel-polyfill": "^6.26.0",
+    "d3": "^5.14.2",
+    "topojson": "^3.0.2"
   }
 }

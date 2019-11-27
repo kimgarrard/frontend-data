@@ -3,15 +3,25 @@
   <head>
     <script src="https://unpkg.com/d3@5.11.0/dist/d3.min.js"></script>
     <script src="https://unpkg.com/topojson@3.0.2/dist/topojson.min.js"></script>
+    <!-- <script src="https://d3js.org/d3.v4.js"></script> -->
+    <!-- <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script> -->
+    <!-- <script src="https://d3js.org/d3-geo-projection.v2.min.js"></script> -->
+    <!-- <script src="//d3js.org/d3.v5.min.js"></script> -->
+    <script src="//unpkg.com/topojson@3"></script>
     <link rel="stylesheet" href="/styles.8986bff4.css">
-    <title>D3 map</title>
+    <title>Foto's over de Wereld</title>
   <script src="/styles.8986bff4.js"></script></head>
+
   <body>
-    <div>
+    <div class="detailsDiv"></div>
+    <div class="titleDiv">
     	<h1>Foto's over de Wereld</h1>
     </div>
+    <form>Select a variable to plot </form>
+    <div id="dataviz_basicZoom"></div>
     <div class="svgDiv">
-    	<svg></svg>
+    	<svg viewBox="-42 0 1050 500" class="test">
+      </svg>
     </div>
     <script src="/frontend-data.e31bb0bc.js"></script>
   </body>

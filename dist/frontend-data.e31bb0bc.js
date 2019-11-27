@@ -7324,7 +7324,7 @@ require('./modules/web.immediate');
 require('./modules/web.dom.iterable');
 module.exports = require('./modules/_core');
 
-},{"./modules/es6.symbol":"node_modules/core-js/modules/es6.symbol.js","./modules/es6.object.create":"node_modules/core-js/modules/es6.object.create.js","./modules/es6.object.define-property":"node_modules/core-js/modules/es6.object.define-property.js","./modules/es6.object.define-properties":"node_modules/core-js/modules/es6.object.define-properties.js","./modules/es6.object.get-own-property-descriptor":"node_modules/core-js/modules/es6.object.get-own-property-descriptor.js","./modules/es6.object.get-prototype-of":"node_modules/core-js/modules/es6.object.get-prototype-of.js","./modules/es6.object.keys":"node_modules/core-js/modules/es6.object.keys.js","./modules/es6.object.get-own-property-names":"node_modules/core-js/modules/es6.object.get-own-property-names.js","./modules/es6.object.freeze":"node_modules/core-js/modules/es6.object.freeze.js","./modules/es6.object.seal":"node_modules/core-js/modules/es6.object.seal.js","./modules/es6.object.prevent-extensions":"node_modules/core-js/modules/es6.object.prevent-extensions.js","./modules/es6.object.is-frozen":"node_modules/core-js/modules/es6.object.is-frozen.js","./modules/es6.object.is-sealed":"node_modules/core-js/modules/es6.object.is-sealed.js","./modules/es6.object.is-extensible":"node_modules/core-js/modules/es6.object.is-extensible.js","./modules/es6.object.assign":"node_modules/core-js/modules/es6.object.assign.js","./modules/es6.object.is":"node_modules/core-js/modules/es6.object.is.js","./modules/es6.object.set-prototype-of":"node_modules/core-js/modules/es6.object.set-prototype-of.js","./modules/es6.object.to-string":"node_modules/core-js/modules/es6.object.to-string.js","./modules/es6.function.bind":"node_modules/core-js/modules/es6.function.bind.js","./modules/es6.function.name":"node_modules/core-js/modules/es6.function.name.js","./modules/es6.function.has-instance":"node_modules/core-js/modules/es6.function.has-instance.js","./modules/es6.parse-int":"node_modules/core-js/modules/es6.parse-int.js","./modules/es6.parse-float":"node_modules/core-js/modules/es6.parse-float.js","./modules/es6.number.constructor":"node_modules/core-js/modules/es6.number.constructor.js","./modules/es6.number.to-fixed":"node_modules/core-js/modules/es6.number.to-fixed.js","./modules/es6.number.to-precision":"node_modules/core-js/modules/es6.number.to-precision.js","./modules/es6.number.epsilon":"node_modules/core-js/modules/es6.number.epsilon.js","./modules/es6.number.is-finite":"node_modules/core-js/modules/es6.number.is-finite.js","./modules/es6.number.is-integer":"node_modules/core-js/modules/es6.number.is-integer.js","./modules/es6.number.is-nan":"node_modules/core-js/modules/es6.number.is-nan.js","./modules/es6.number.is-safe-integer":"node_modules/core-js/modules/es6.number.is-safe-integer.js","./modules/es6.number.max-safe-integer":"node_modules/core-js/modules/es6.number.max-safe-integer.js","./modules/es6.number.min-safe-integer":"node_modules/core-js/modules/es6.number.min-safe-integer.js","./modules/es6.number.parse-float":"node_modules/core-js/modules/es6.number.parse-float.js","./modules/es6.number.parse-int":"node_modules/core-js/modules/es6.number.parse-int.js","./modules/es6.math.acosh":"node_modules/core-js/modules/es6.math.acosh.js","./modules/es6.math.asinh":"node_modules/core-js/modules/es6.math.asinh.js","./modules/es6.math.atanh":"node_modules/core-js/modules/es6.math.atanh.js","./modules/es6.math.cbrt":"node_modules/core-js/modules/es6.math.cbrt.js","./modules/es6.math.clz32":"node_modules/core-js/modules/es6.math.clz32.js","./modules/es6.math.cosh":"node_modules/core-js/modules/es6.math.cosh.js","./modules/es6.math.expm1":"node_modules/core-js/modules/es6.math.expm1.js","./modules/es6.math.fround":"node_modules/core-js/modules/es6.math.fround.js","./modules/es6.math.hypot":"node_modules/core-js/modules/es6.math.hypot.js","./modules/es6.math.imul":"node_modules/core-js/modules/es6.math.imul.js","./modules/es6.math.log10":"node_modules/core-js/modules/es6.math.log10.js","./modules/es6.math.log1p":"node_modules/core-js/modules/es6.math.log1p.js","./modules/es6.math.log2":"node_modules/core-js/modules/es6.math.log2.js","./modules/es6.math.sign":"node_modules/core-js/modules/es6.math.sign.js","./modules/es6.math.sinh":"node_modules/core-js/modules/es6.math.sinh.js","./modules/es6.math.tanh":"node_modules/core-js/modules/es6.math.tanh.js","./modules/es6.math.trunc":"node_modules/core-js/modules/es6.math.trunc.js","./modules/es6.string.from-code-point":"node_modules/core-js/modules/es6.string.from-code-point.js","./modules/es6.string.raw":"node_modules/core-js/modules/es6.string.raw.js","./modules/es6.string.trim":"node_modules/core-js/modules/es6.string.trim.js","./modules/es6.string.iterator":"node_modules/core-js/modules/es6.string.iterator.js","./modules/es6.string.code-point-at":"node_modules/core-js/modules/es6.string.code-point-at.js","./modules/es6.string.ends-with":"node_modules/core-js/modules/es6.string.ends-with.js","./modules/es6.string.includes":"node_modules/core-js/modules/es6.string.includes.js","./modules/es6.string.repeat":"node_modules/core-js/modules/es6.string.repeat.js","./modules/es6.string.starts-with":"node_modules/core-js/modules/es6.string.starts-with.js","./modules/es6.string.anchor":"node_modules/core-js/modules/es6.string.anchor.js","./modules/es6.string.big":"node_modules/core-js/modules/es6.string.big.js","./modules/es6.string.blink":"node_modules/core-js/modules/es6.string.blink.js","./modules/es6.string.bold":"node_modules/core-js/modules/es6.string.bold.js","./modules/es6.string.fixed":"node_modules/core-js/modules/es6.string.fixed.js","./modules/es6.string.fontcolor":"node_modules/core-js/modules/es6.string.fontcolor.js","./modules/es6.string.fontsize":"node_modules/core-js/modules/es6.string.fontsize.js","./modules/es6.string.italics":"node_modules/core-js/modules/es6.string.italics.js","./modules/es6.string.link":"node_modules/core-js/modules/es6.string.link.js","./modules/es6.string.small":"node_modules/core-js/modules/es6.string.small.js","./modules/es6.string.strike":"node_modules/core-js/modules/es6.string.strike.js","./modules/es6.string.sub":"node_modules/core-js/modules/es6.string.sub.js","./modules/es6.string.sup":"node_modules/core-js/modules/es6.string.sup.js","./modules/es6.date.now":"node_modules/core-js/modules/es6.date.now.js","./modules/es6.date.to-json":"node_modules/core-js/modules/es6.date.to-json.js","./modules/es6.date.to-iso-string":"node_modules/core-js/modules/es6.date.to-iso-string.js","./modules/es6.date.to-string":"node_modules/core-js/modules/es6.date.to-string.js","./modules/es6.date.to-primitive":"node_modules/core-js/modules/es6.date.to-primitive.js","./modules/es6.array.is-array":"node_modules/core-js/modules/es6.array.is-array.js","./modules/es6.array.from":"node_modules/core-js/modules/es6.array.from.js","./modules/es6.array.of":"node_modules/core-js/modules/es6.array.of.js","./modules/es6.array.join":"node_modules/core-js/modules/es6.array.join.js","./modules/es6.array.slice":"node_modules/core-js/modules/es6.array.slice.js","./modules/es6.array.sort":"node_modules/core-js/modules/es6.array.sort.js","./modules/es6.array.for-each":"node_modules/core-js/modules/es6.array.for-each.js","./modules/es6.array.map":"node_modules/core-js/modules/es6.array.map.js","./modules/es6.array.filter":"node_modules/core-js/modules/es6.array.filter.js","./modules/es6.array.some":"node_modules/core-js/modules/es6.array.some.js","./modules/es6.array.every":"node_modules/core-js/modules/es6.array.every.js","./modules/es6.array.reduce":"node_modules/core-js/modules/es6.array.reduce.js","./modules/es6.array.reduce-right":"node_modules/core-js/modules/es6.array.reduce-right.js","./modules/es6.array.index-of":"node_modules/core-js/modules/es6.array.index-of.js","./modules/es6.array.last-index-of":"node_modules/core-js/modules/es6.array.last-index-of.js","./modules/es6.array.copy-within":"node_modules/core-js/modules/es6.array.copy-within.js","./modules/es6.array.fill":"node_modules/core-js/modules/es6.array.fill.js","./modules/es6.array.find":"node_modules/core-js/modules/es6.array.find.js","./modules/es6.array.find-index":"node_modules/core-js/modules/es6.array.find-index.js","./modules/es6.array.species":"node_modules/core-js/modules/es6.array.species.js","./modules/es6.array.iterator":"node_modules/core-js/modules/es6.array.iterator.js","./modules/es6.regexp.constructor":"node_modules/core-js/modules/es6.regexp.constructor.js","./modules/es6.regexp.exec":"node_modules/core-js/modules/es6.regexp.exec.js","./modules/es6.regexp.to-string":"node_modules/core-js/modules/es6.regexp.to-string.js","./modules/es6.regexp.flags":"node_modules/core-js/modules/es6.regexp.flags.js","./modules/es6.regexp.match":"node_modules/core-js/modules/es6.regexp.match.js","./modules/es6.regexp.replace":"node_modules/core-js/modules/es6.regexp.replace.js","./modules/es6.regexp.search":"node_modules/core-js/modules/es6.regexp.search.js","./modules/es6.regexp.split":"node_modules/core-js/modules/es6.regexp.split.js","./modules/es6.promise":"node_modules/core-js/modules/es6.promise.js","./modules/es6.map":"node_modules/core-js/modules/es6.map.js","./modules/es6.set":"node_modules/core-js/modules/es6.set.js","./modules/es6.weak-map":"node_modules/core-js/modules/es6.weak-map.js","./modules/es6.weak-set":"node_modules/core-js/modules/es6.weak-set.js","./modules/es6.typed.array-buffer":"node_modules/core-js/modules/es6.typed.array-buffer.js","./modules/es6.typed.data-view":"node_modules/core-js/modules/es6.typed.data-view.js","./modules/es6.typed.int8-array":"node_modules/core-js/modules/es6.typed.int8-array.js","./modules/es6.typed.uint8-array":"node_modules/core-js/modules/es6.typed.uint8-array.js","./modules/es6.typed.uint8-clamped-array":"node_modules/core-js/modules/es6.typed.uint8-clamped-array.js","./modules/es6.typed.int16-array":"node_modules/core-js/modules/es6.typed.int16-array.js","./modules/es6.typed.uint16-array":"node_modules/core-js/modules/es6.typed.uint16-array.js","./modules/es6.typed.int32-array":"node_modules/core-js/modules/es6.typed.int32-array.js","./modules/es6.typed.uint32-array":"node_modules/core-js/modules/es6.typed.uint32-array.js","./modules/es6.typed.float32-array":"node_modules/core-js/modules/es6.typed.float32-array.js","./modules/es6.typed.float64-array":"node_modules/core-js/modules/es6.typed.float64-array.js","./modules/es6.reflect.apply":"node_modules/core-js/modules/es6.reflect.apply.js","./modules/es6.reflect.construct":"node_modules/core-js/modules/es6.reflect.construct.js","./modules/es6.reflect.define-property":"node_modules/core-js/modules/es6.reflect.define-property.js","./modules/es6.reflect.delete-property":"node_modules/core-js/modules/es6.reflect.delete-property.js","./modules/es6.reflect.enumerate":"node_modules/core-js/modules/es6.reflect.enumerate.js","./modules/es6.reflect.get":"node_modules/core-js/modules/es6.reflect.get.js","./modules/es6.reflect.get-own-property-descriptor":"node_modules/core-js/modules/es6.reflect.get-own-property-descriptor.js","./modules/es6.reflect.get-prototype-of":"node_modules/core-js/modules/es6.reflect.get-prototype-of.js","./modules/es6.reflect.has":"node_modules/core-js/modules/es6.reflect.has.js","./modules/es6.reflect.is-extensible":"node_modules/core-js/modules/es6.reflect.is-extensible.js","./modules/es6.reflect.own-keys":"node_modules/core-js/modules/es6.reflect.own-keys.js","./modules/es6.reflect.prevent-extensions":"node_modules/core-js/modules/es6.reflect.prevent-extensions.js","./modules/es6.reflect.set":"node_modules/core-js/modules/es6.reflect.set.js","./modules/es6.reflect.set-prototype-of":"node_modules/core-js/modules/es6.reflect.set-prototype-of.js","./modules/es7.array.includes":"node_modules/core-js/modules/es7.array.includes.js","./modules/es7.array.flat-map":"node_modules/core-js/modules/es7.array.flat-map.js","./modules/es7.array.flatten":"node_modules/core-js/modules/es7.array.flatten.js","./modules/es7.string.at":"node_modules/core-js/modules/es7.string.at.js","./modules/es7.string.pad-start":"node_modules/core-js/modules/es7.string.pad-start.js","./modules/es7.string.pad-end":"node_modules/core-js/modules/es7.string.pad-end.js","./modules/es7.string.trim-left":"node_modules/core-js/modules/es7.string.trim-left.js","./modules/es7.string.trim-right":"node_modules/core-js/modules/es7.string.trim-right.js","./modules/es7.string.match-all":"node_modules/core-js/modules/es7.string.match-all.js","./modules/es7.symbol.async-iterator":"node_modules/core-js/modules/es7.symbol.async-iterator.js","./modules/es7.symbol.observable":"node_modules/core-js/modules/es7.symbol.observable.js","./modules/es7.object.get-own-property-descriptors":"node_modules/core-js/modules/es7.object.get-own-property-descriptors.js","./modules/es7.object.values":"node_modules/core-js/modules/es7.object.values.js","./modules/es7.object.entries":"node_modules/core-js/modules/es7.object.entries.js","./modules/es7.object.define-getter":"node_modules/core-js/modules/es7.object.define-getter.js","./modules/es7.object.define-setter":"node_modules/core-js/modules/es7.object.define-setter.js","./modules/es7.object.lookup-getter":"node_modules/core-js/modules/es7.object.lookup-getter.js","./modules/es7.object.lookup-setter":"node_modules/core-js/modules/es7.object.lookup-setter.js","./modules/es7.map.to-json":"node_modules/core-js/modules/es7.map.to-json.js","./modules/es7.set.to-json":"node_modules/core-js/modules/es7.set.to-json.js","./modules/es7.map.of":"node_modules/core-js/modules/es7.map.of.js","./modules/es7.set.of":"node_modules/core-js/modules/es7.set.of.js","./modules/es7.weak-map.of":"node_modules/core-js/modules/es7.weak-map.of.js","./modules/es7.weak-set.of":"node_modules/core-js/modules/es7.weak-set.of.js","./modules/es7.map.from":"node_modules/core-js/modules/es7.map.from.js","./modules/es7.set.from":"node_modules/core-js/modules/es7.set.from.js","./modules/es7.weak-map.from":"node_modules/core-js/modules/es7.weak-map.from.js","./modules/es7.weak-set.from":"node_modules/core-js/modules/es7.weak-set.from.js","./modules/es7.global":"node_modules/core-js/modules/es7.global.js","./modules/es7.system.global":"node_modules/core-js/modules/es7.system.global.js","./modules/es7.error.is-error":"node_modules/core-js/modules/es7.error.is-error.js","./modules/es7.math.clamp":"node_modules/core-js/modules/es7.math.clamp.js","./modules/es7.math.deg-per-rad":"node_modules/core-js/modules/es7.math.deg-per-rad.js","./modules/es7.math.degrees":"node_modules/core-js/modules/es7.math.degrees.js","./modules/es7.math.fscale":"node_modules/core-js/modules/es7.math.fscale.js","./modules/es7.math.iaddh":"node_modules/core-js/modules/es7.math.iaddh.js","./modules/es7.math.isubh":"node_modules/core-js/modules/es7.math.isubh.js","./modules/es7.math.imulh":"node_modules/core-js/modules/es7.math.imulh.js","./modules/es7.math.rad-per-deg":"node_modules/core-js/modules/es7.math.rad-per-deg.js","./modules/es7.math.radians":"node_modules/core-js/modules/es7.math.radians.js","./modules/es7.math.scale":"node_modules/core-js/modules/es7.math.scale.js","./modules/es7.math.umulh":"node_modules/core-js/modules/es7.math.umulh.js","./modules/es7.math.signbit":"node_modules/core-js/modules/es7.math.signbit.js","./modules/es7.promise.finally":"node_modules/core-js/modules/es7.promise.finally.js","./modules/es7.promise.try":"node_modules/core-js/modules/es7.promise.try.js","./modules/es7.reflect.define-metadata":"node_modules/core-js/modules/es7.reflect.define-metadata.js","./modules/es7.reflect.delete-metadata":"node_modules/core-js/modules/es7.reflect.delete-metadata.js","./modules/es7.reflect.get-metadata":"node_modules/core-js/modules/es7.reflect.get-metadata.js","./modules/es7.reflect.get-metadata-keys":"node_modules/core-js/modules/es7.reflect.get-metadata-keys.js","./modules/es7.reflect.get-own-metadata":"node_modules/core-js/modules/es7.reflect.get-own-metadata.js","./modules/es7.reflect.get-own-metadata-keys":"node_modules/core-js/modules/es7.reflect.get-own-metadata-keys.js","./modules/es7.reflect.has-metadata":"node_modules/core-js/modules/es7.reflect.has-metadata.js","./modules/es7.reflect.has-own-metadata":"node_modules/core-js/modules/es7.reflect.has-own-metadata.js","./modules/es7.reflect.metadata":"node_modules/core-js/modules/es7.reflect.metadata.js","./modules/es7.asap":"node_modules/core-js/modules/es7.asap.js","./modules/es7.observable":"node_modules/core-js/modules/es7.observable.js","./modules/web.timers":"node_modules/core-js/modules/web.timers.js","./modules/web.immediate":"node_modules/core-js/modules/web.immediate.js","./modules/web.dom.iterable":"node_modules/core-js/modules/web.dom.iterable.js","./modules/_core":"node_modules/core-js/modules/_core.js"}],"node_modules/babel-polyfill/node_modules/regenerator-runtime/runtime.js":[function(require,module,exports) {
+},{"./modules/es6.symbol":"node_modules/core-js/modules/es6.symbol.js","./modules/es6.object.create":"node_modules/core-js/modules/es6.object.create.js","./modules/es6.object.define-property":"node_modules/core-js/modules/es6.object.define-property.js","./modules/es6.object.define-properties":"node_modules/core-js/modules/es6.object.define-properties.js","./modules/es6.object.get-own-property-descriptor":"node_modules/core-js/modules/es6.object.get-own-property-descriptor.js","./modules/es6.object.get-prototype-of":"node_modules/core-js/modules/es6.object.get-prototype-of.js","./modules/es6.object.keys":"node_modules/core-js/modules/es6.object.keys.js","./modules/es6.object.get-own-property-names":"node_modules/core-js/modules/es6.object.get-own-property-names.js","./modules/es6.object.freeze":"node_modules/core-js/modules/es6.object.freeze.js","./modules/es6.object.seal":"node_modules/core-js/modules/es6.object.seal.js","./modules/es6.object.prevent-extensions":"node_modules/core-js/modules/es6.object.prevent-extensions.js","./modules/es6.object.is-frozen":"node_modules/core-js/modules/es6.object.is-frozen.js","./modules/es6.object.is-sealed":"node_modules/core-js/modules/es6.object.is-sealed.js","./modules/es6.object.is-extensible":"node_modules/core-js/modules/es6.object.is-extensible.js","./modules/es6.object.assign":"node_modules/core-js/modules/es6.object.assign.js","./modules/es6.object.is":"node_modules/core-js/modules/es6.object.is.js","./modules/es6.object.set-prototype-of":"node_modules/core-js/modules/es6.object.set-prototype-of.js","./modules/es6.object.to-string":"node_modules/core-js/modules/es6.object.to-string.js","./modules/es6.function.bind":"node_modules/core-js/modules/es6.function.bind.js","./modules/es6.function.name":"node_modules/core-js/modules/es6.function.name.js","./modules/es6.function.has-instance":"node_modules/core-js/modules/es6.function.has-instance.js","./modules/es6.parse-int":"node_modules/core-js/modules/es6.parse-int.js","./modules/es6.parse-float":"node_modules/core-js/modules/es6.parse-float.js","./modules/es6.number.constructor":"node_modules/core-js/modules/es6.number.constructor.js","./modules/es6.number.to-fixed":"node_modules/core-js/modules/es6.number.to-fixed.js","./modules/es6.number.to-precision":"node_modules/core-js/modules/es6.number.to-precision.js","./modules/es6.number.epsilon":"node_modules/core-js/modules/es6.number.epsilon.js","./modules/es6.number.is-finite":"node_modules/core-js/modules/es6.number.is-finite.js","./modules/es6.number.is-integer":"node_modules/core-js/modules/es6.number.is-integer.js","./modules/es6.number.is-nan":"node_modules/core-js/modules/es6.number.is-nan.js","./modules/es6.number.is-safe-integer":"node_modules/core-js/modules/es6.number.is-safe-integer.js","./modules/es6.number.max-safe-integer":"node_modules/core-js/modules/es6.number.max-safe-integer.js","./modules/es6.number.min-safe-integer":"node_modules/core-js/modules/es6.number.min-safe-integer.js","./modules/es6.number.parse-float":"node_modules/core-js/modules/es6.number.parse-float.js","./modules/es6.number.parse-int":"node_modules/core-js/modules/es6.number.parse-int.js","./modules/es6.math.acosh":"node_modules/core-js/modules/es6.math.acosh.js","./modules/es6.math.asinh":"node_modules/core-js/modules/es6.math.asinh.js","./modules/es6.math.atanh":"node_modules/core-js/modules/es6.math.atanh.js","./modules/es6.math.cbrt":"node_modules/core-js/modules/es6.math.cbrt.js","./modules/es6.math.clz32":"node_modules/core-js/modules/es6.math.clz32.js","./modules/es6.math.cosh":"node_modules/core-js/modules/es6.math.cosh.js","./modules/es6.math.expm1":"node_modules/core-js/modules/es6.math.expm1.js","./modules/es6.math.fround":"node_modules/core-js/modules/es6.math.fround.js","./modules/es6.math.hypot":"node_modules/core-js/modules/es6.math.hypot.js","./modules/es6.math.imul":"node_modules/core-js/modules/es6.math.imul.js","./modules/es6.math.log10":"node_modules/core-js/modules/es6.math.log10.js","./modules/es6.math.log1p":"node_modules/core-js/modules/es6.math.log1p.js","./modules/es6.math.log2":"node_modules/core-js/modules/es6.math.log2.js","./modules/es6.math.sign":"node_modules/core-js/modules/es6.math.sign.js","./modules/es6.math.sinh":"node_modules/core-js/modules/es6.math.sinh.js","./modules/es6.math.tanh":"node_modules/core-js/modules/es6.math.tanh.js","./modules/es6.math.trunc":"node_modules/core-js/modules/es6.math.trunc.js","./modules/es6.string.from-code-point":"node_modules/core-js/modules/es6.string.from-code-point.js","./modules/es6.string.raw":"node_modules/core-js/modules/es6.string.raw.js","./modules/es6.string.trim":"node_modules/core-js/modules/es6.string.trim.js","./modules/es6.string.iterator":"node_modules/core-js/modules/es6.string.iterator.js","./modules/es6.string.code-point-at":"node_modules/core-js/modules/es6.string.code-point-at.js","./modules/es6.string.ends-with":"node_modules/core-js/modules/es6.string.ends-with.js","./modules/es6.string.includes":"node_modules/core-js/modules/es6.string.includes.js","./modules/es6.string.repeat":"node_modules/core-js/modules/es6.string.repeat.js","./modules/es6.string.starts-with":"node_modules/core-js/modules/es6.string.starts-with.js","./modules/es6.string.anchor":"node_modules/core-js/modules/es6.string.anchor.js","./modules/es6.string.big":"node_modules/core-js/modules/es6.string.big.js","./modules/es6.string.blink":"node_modules/core-js/modules/es6.string.blink.js","./modules/es6.string.bold":"node_modules/core-js/modules/es6.string.bold.js","./modules/es6.string.fixed":"node_modules/core-js/modules/es6.string.fixed.js","./modules/es6.string.fontcolor":"node_modules/core-js/modules/es6.string.fontcolor.js","./modules/es6.string.fontsize":"node_modules/core-js/modules/es6.string.fontsize.js","./modules/es6.string.italics":"node_modules/core-js/modules/es6.string.italics.js","./modules/es6.string.link":"node_modules/core-js/modules/es6.string.link.js","./modules/es6.string.small":"node_modules/core-js/modules/es6.string.small.js","./modules/es6.string.strike":"node_modules/core-js/modules/es6.string.strike.js","./modules/es6.string.sub":"node_modules/core-js/modules/es6.string.sub.js","./modules/es6.string.sup":"node_modules/core-js/modules/es6.string.sup.js","./modules/es6.date.now":"node_modules/core-js/modules/es6.date.now.js","./modules/es6.date.to-json":"node_modules/core-js/modules/es6.date.to-json.js","./modules/es6.date.to-iso-string":"node_modules/core-js/modules/es6.date.to-iso-string.js","./modules/es6.date.to-string":"node_modules/core-js/modules/es6.date.to-string.js","./modules/es6.date.to-primitive":"node_modules/core-js/modules/es6.date.to-primitive.js","./modules/es6.array.is-array":"node_modules/core-js/modules/es6.array.is-array.js","./modules/es6.array.from":"node_modules/core-js/modules/es6.array.from.js","./modules/es6.array.of":"node_modules/core-js/modules/es6.array.of.js","./modules/es6.array.join":"node_modules/core-js/modules/es6.array.join.js","./modules/es6.array.slice":"node_modules/core-js/modules/es6.array.slice.js","./modules/es6.array.sort":"node_modules/core-js/modules/es6.array.sort.js","./modules/es6.array.for-each":"node_modules/core-js/modules/es6.array.for-each.js","./modules/es6.array.map":"node_modules/core-js/modules/es6.array.map.js","./modules/es6.array.filter":"node_modules/core-js/modules/es6.array.filter.js","./modules/es6.array.some":"node_modules/core-js/modules/es6.array.some.js","./modules/es6.array.every":"node_modules/core-js/modules/es6.array.every.js","./modules/es6.array.reduce":"node_modules/core-js/modules/es6.array.reduce.js","./modules/es6.array.reduce-right":"node_modules/core-js/modules/es6.array.reduce-right.js","./modules/es6.array.index-of":"node_modules/core-js/modules/es6.array.index-of.js","./modules/es6.array.last-index-of":"node_modules/core-js/modules/es6.array.last-index-of.js","./modules/es6.array.copy-within":"node_modules/core-js/modules/es6.array.copy-within.js","./modules/es6.array.fill":"node_modules/core-js/modules/es6.array.fill.js","./modules/es6.array.find":"node_modules/core-js/modules/es6.array.find.js","./modules/es6.array.find-index":"node_modules/core-js/modules/es6.array.find-index.js","./modules/es6.array.species":"node_modules/core-js/modules/es6.array.species.js","./modules/es6.array.iterator":"node_modules/core-js/modules/es6.array.iterator.js","./modules/es6.regexp.constructor":"node_modules/core-js/modules/es6.regexp.constructor.js","./modules/es6.regexp.exec":"node_modules/core-js/modules/es6.regexp.exec.js","./modules/es6.regexp.to-string":"node_modules/core-js/modules/es6.regexp.to-string.js","./modules/es6.regexp.flags":"node_modules/core-js/modules/es6.regexp.flags.js","./modules/es6.regexp.match":"node_modules/core-js/modules/es6.regexp.match.js","./modules/es6.regexp.replace":"node_modules/core-js/modules/es6.regexp.replace.js","./modules/es6.regexp.search":"node_modules/core-js/modules/es6.regexp.search.js","./modules/es6.regexp.split":"node_modules/core-js/modules/es6.regexp.split.js","./modules/es6.promise":"node_modules/core-js/modules/es6.promise.js","./modules/es6.map":"node_modules/core-js/modules/es6.map.js","./modules/es6.set":"node_modules/core-js/modules/es6.set.js","./modules/es6.weak-map":"node_modules/core-js/modules/es6.weak-map.js","./modules/es6.weak-set":"node_modules/core-js/modules/es6.weak-set.js","./modules/es6.typed.array-buffer":"node_modules/core-js/modules/es6.typed.array-buffer.js","./modules/es6.typed.data-view":"node_modules/core-js/modules/es6.typed.data-view.js","./modules/es6.typed.int8-array":"node_modules/core-js/modules/es6.typed.int8-array.js","./modules/es6.typed.uint8-array":"node_modules/core-js/modules/es6.typed.uint8-array.js","./modules/es6.typed.uint8-clamped-array":"node_modules/core-js/modules/es6.typed.uint8-clamped-array.js","./modules/es6.typed.int16-array":"node_modules/core-js/modules/es6.typed.int16-array.js","./modules/es6.typed.uint16-array":"node_modules/core-js/modules/es6.typed.uint16-array.js","./modules/es6.typed.int32-array":"node_modules/core-js/modules/es6.typed.int32-array.js","./modules/es6.typed.uint32-array":"node_modules/core-js/modules/es6.typed.uint32-array.js","./modules/es6.typed.float32-array":"node_modules/core-js/modules/es6.typed.float32-array.js","./modules/es6.typed.float64-array":"node_modules/core-js/modules/es6.typed.float64-array.js","./modules/es6.reflect.apply":"node_modules/core-js/modules/es6.reflect.apply.js","./modules/es6.reflect.construct":"node_modules/core-js/modules/es6.reflect.construct.js","./modules/es6.reflect.define-property":"node_modules/core-js/modules/es6.reflect.define-property.js","./modules/es6.reflect.delete-property":"node_modules/core-js/modules/es6.reflect.delete-property.js","./modules/es6.reflect.enumerate":"node_modules/core-js/modules/es6.reflect.enumerate.js","./modules/es6.reflect.get":"node_modules/core-js/modules/es6.reflect.get.js","./modules/es6.reflect.get-own-property-descriptor":"node_modules/core-js/modules/es6.reflect.get-own-property-descriptor.js","./modules/es6.reflect.get-prototype-of":"node_modules/core-js/modules/es6.reflect.get-prototype-of.js","./modules/es6.reflect.has":"node_modules/core-js/modules/es6.reflect.has.js","./modules/es6.reflect.is-extensible":"node_modules/core-js/modules/es6.reflect.is-extensible.js","./modules/es6.reflect.own-keys":"node_modules/core-js/modules/es6.reflect.own-keys.js","./modules/es6.reflect.prevent-extensions":"node_modules/core-js/modules/es6.reflect.prevent-extensions.js","./modules/es6.reflect.set":"node_modules/core-js/modules/es6.reflect.set.js","./modules/es6.reflect.set-prototype-of":"node_modules/core-js/modules/es6.reflect.set-prototype-of.js","./modules/es7.array.includes":"node_modules/core-js/modules/es7.array.includes.js","./modules/es7.array.flat-map":"node_modules/core-js/modules/es7.array.flat-map.js","./modules/es7.array.flatten":"node_modules/core-js/modules/es7.array.flatten.js","./modules/es7.string.at":"node_modules/core-js/modules/es7.string.at.js","./modules/es7.string.pad-start":"node_modules/core-js/modules/es7.string.pad-start.js","./modules/es7.string.pad-end":"node_modules/core-js/modules/es7.string.pad-end.js","./modules/es7.string.trim-left":"node_modules/core-js/modules/es7.string.trim-left.js","./modules/es7.string.trim-right":"node_modules/core-js/modules/es7.string.trim-right.js","./modules/es7.string.match-all":"node_modules/core-js/modules/es7.string.match-all.js","./modules/es7.symbol.async-iterator":"node_modules/core-js/modules/es7.symbol.async-iterator.js","./modules/es7.symbol.observable":"node_modules/core-js/modules/es7.symbol.observable.js","./modules/es7.object.get-own-property-descriptors":"node_modules/core-js/modules/es7.object.get-own-property-descriptors.js","./modules/es7.object.values":"node_modules/core-js/modules/es7.object.values.js","./modules/es7.object.entries":"node_modules/core-js/modules/es7.object.entries.js","./modules/es7.object.define-getter":"node_modules/core-js/modules/es7.object.define-getter.js","./modules/es7.object.define-setter":"node_modules/core-js/modules/es7.object.define-setter.js","./modules/es7.object.lookup-getter":"node_modules/core-js/modules/es7.object.lookup-getter.js","./modules/es7.object.lookup-setter":"node_modules/core-js/modules/es7.object.lookup-setter.js","./modules/es7.map.to-json":"node_modules/core-js/modules/es7.map.to-json.js","./modules/es7.set.to-json":"node_modules/core-js/modules/es7.set.to-json.js","./modules/es7.map.of":"node_modules/core-js/modules/es7.map.of.js","./modules/es7.set.of":"node_modules/core-js/modules/es7.set.of.js","./modules/es7.weak-map.of":"node_modules/core-js/modules/es7.weak-map.of.js","./modules/es7.weak-set.of":"node_modules/core-js/modules/es7.weak-set.of.js","./modules/es7.map.from":"node_modules/core-js/modules/es7.map.from.js","./modules/es7.set.from":"node_modules/core-js/modules/es7.set.from.js","./modules/es7.weak-map.from":"node_modules/core-js/modules/es7.weak-map.from.js","./modules/es7.weak-set.from":"node_modules/core-js/modules/es7.weak-set.from.js","./modules/es7.global":"node_modules/core-js/modules/es7.global.js","./modules/es7.system.global":"node_modules/core-js/modules/es7.system.global.js","./modules/es7.error.is-error":"node_modules/core-js/modules/es7.error.is-error.js","./modules/es7.math.clamp":"node_modules/core-js/modules/es7.math.clamp.js","./modules/es7.math.deg-per-rad":"node_modules/core-js/modules/es7.math.deg-per-rad.js","./modules/es7.math.degrees":"node_modules/core-js/modules/es7.math.degrees.js","./modules/es7.math.fscale":"node_modules/core-js/modules/es7.math.fscale.js","./modules/es7.math.iaddh":"node_modules/core-js/modules/es7.math.iaddh.js","./modules/es7.math.isubh":"node_modules/core-js/modules/es7.math.isubh.js","./modules/es7.math.imulh":"node_modules/core-js/modules/es7.math.imulh.js","./modules/es7.math.rad-per-deg":"node_modules/core-js/modules/es7.math.rad-per-deg.js","./modules/es7.math.radians":"node_modules/core-js/modules/es7.math.radians.js","./modules/es7.math.scale":"node_modules/core-js/modules/es7.math.scale.js","./modules/es7.math.umulh":"node_modules/core-js/modules/es7.math.umulh.js","./modules/es7.math.signbit":"node_modules/core-js/modules/es7.math.signbit.js","./modules/es7.promise.finally":"node_modules/core-js/modules/es7.promise.finally.js","./modules/es7.promise.try":"node_modules/core-js/modules/es7.promise.try.js","./modules/es7.reflect.define-metadata":"node_modules/core-js/modules/es7.reflect.define-metadata.js","./modules/es7.reflect.delete-metadata":"node_modules/core-js/modules/es7.reflect.delete-metadata.js","./modules/es7.reflect.get-metadata":"node_modules/core-js/modules/es7.reflect.get-metadata.js","./modules/es7.reflect.get-metadata-keys":"node_modules/core-js/modules/es7.reflect.get-metadata-keys.js","./modules/es7.reflect.get-own-metadata":"node_modules/core-js/modules/es7.reflect.get-own-metadata.js","./modules/es7.reflect.get-own-metadata-keys":"node_modules/core-js/modules/es7.reflect.get-own-metadata-keys.js","./modules/es7.reflect.has-metadata":"node_modules/core-js/modules/es7.reflect.has-metadata.js","./modules/es7.reflect.has-own-metadata":"node_modules/core-js/modules/es7.reflect.has-own-metadata.js","./modules/es7.reflect.metadata":"node_modules/core-js/modules/es7.reflect.metadata.js","./modules/es7.asap":"node_modules/core-js/modules/es7.asap.js","./modules/es7.observable":"node_modules/core-js/modules/es7.observable.js","./modules/web.timers":"node_modules/core-js/modules/web.timers.js","./modules/web.immediate":"node_modules/core-js/modules/web.immediate.js","./modules/web.dom.iterable":"node_modules/core-js/modules/web.dom.iterable.js","./modules/_core":"node_modules/core-js/modules/_core.js"}],"node_modules/regenerator-runtime/runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 /**
  * Copyright (c) 2014, Facebook, Inc.
@@ -8115,7 +8115,7 @@ define(String.prototype, "padRight", "".padEnd);
 "pop,reverse,shift,keys,values,entries,indexOf,every,some,forEach,map,filter,find,findIndex,includes,join,slice,concat,push,splice,unshift,sort,lastIndexOf,reduce,reduceRight,copyWithin,fill".split(",").forEach(function (key) {
   [][key] && define(Array, key, Function.call.bind([][key]));
 });
-},{"core-js/shim":"node_modules/core-js/shim.js","regenerator-runtime/runtime":"node_modules/babel-polyfill/node_modules/regenerator-runtime/runtime.js","core-js/fn/regexp/escape":"node_modules/core-js/fn/regexp/escape.js"}],"node_modules/d3/dist/package.js":[function(require,module,exports) {
+},{"core-js/shim":"node_modules/core-js/shim.js","regenerator-runtime/runtime":"node_modules/regenerator-runtime/runtime.js","core-js/fn/regexp/escape":"node_modules/core-js/fn/regexp/escape.js"}],"node_modules/d3/dist/package.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -8124,7 +8124,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.dependencies = exports.devDependencies = exports.scripts = exports.files = exports.repository = exports.module = exports.jsdelivr = exports.unpkg = exports.main = exports.author = exports.license = exports.homepage = exports.keywords = exports.description = exports.version = exports.name = void 0;
 var name = "d3";
 exports.name = name;
-var version = "5.14.1";
+var version = "5.14.2";
 exports.version = version;
 var description = "Data-Driven Documents";
 exports.description = description;
@@ -12521,19 +12521,54 @@ var rgbBasis = rgbSpline(_basis.default);
 exports.rgbBasis = rgbBasis;
 var rgbBasisClosed = rgbSpline(_basisClosed.default);
 exports.rgbBasisClosed = rgbBasisClosed;
-},{"d3-color":"node_modules/d3-color/src/index.js","./basis.js":"node_modules/d3-interpolate/src/basis.js","./basisClosed.js":"node_modules/d3-interpolate/src/basisClosed.js","./color.js":"node_modules/d3-interpolate/src/color.js"}],"node_modules/d3-interpolate/src/array.js":[function(require,module,exports) {
+},{"d3-color":"node_modules/d3-color/src/index.js","./basis.js":"node_modules/d3-interpolate/src/basis.js","./basisClosed.js":"node_modules/d3-interpolate/src/basisClosed.js","./color.js":"node_modules/d3-interpolate/src/color.js"}],"node_modules/d3-interpolate/src/numberArray.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = _default;
+exports.isNumberArray = isNumberArray;
+
+function _default(a, b) {
+  if (!b) b = [];
+  var n = a ? Math.min(b.length, a.length) : 0,
+      c = b.slice(),
+      i;
+  return function (t) {
+    for (i = 0; i < n; ++i) c[i] = a[i] * (1 - t) + b[i] * t;
+
+    return c;
+  };
+}
+
+function isNumberArray(x) {
+  return ArrayBuffer.isView(x) && !(x instanceof DataView);
+}
+},{}],"node_modules/d3-interpolate/src/array.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = _default;
+exports.genericArray = genericArray;
 
 var _value = _interopRequireDefault(require("./value.js"));
+
+var _numberArray = _interopRequireWildcard(require("./numberArray.js"));
+
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _default(a, b) {
+  return ((0, _numberArray.isNumberArray)(b) ? _numberArray.default : genericArray)(a, b);
+}
+
+function genericArray(a, b) {
   var nb = b ? b.length : 0,
       na = a ? Math.min(nb, a.length) : 0,
       x = new Array(na),
@@ -12550,7 +12585,7 @@ function _default(a, b) {
     return c;
   };
 }
-},{"./value.js":"node_modules/d3-interpolate/src/value.js"}],"node_modules/d3-interpolate/src/date.js":[function(require,module,exports) {
+},{"./value.js":"node_modules/d3-interpolate/src/value.js","./numberArray.js":"node_modules/d3-interpolate/src/numberArray.js"}],"node_modules/d3-interpolate/src/date.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -12560,8 +12595,8 @@ exports.default = _default;
 
 function _default(a, b) {
   var d = new Date();
-  return a = +a, b -= a, function (t) {
-    return d.setTime(a + b * t), d;
+  return a = +a, b = +b, function (t) {
+    return d.setTime(a * (1 - t) + b * t), d;
   };
 }
 },{}],"node_modules/d3-interpolate/src/number.js":[function(require,module,exports) {
@@ -12573,8 +12608,8 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = _default;
 
 function _default(a, b) {
-  return a = +a, b -= a, function (t) {
-    return a + b * t;
+  return a = +a, b = +b, function (t) {
+    return a * (1 - t) + b * t;
   };
 }
 },{}],"node_modules/d3-interpolate/src/object.js":[function(require,module,exports) {
@@ -12706,7 +12741,7 @@ var _d3Color = require("d3-color");
 
 var _rgb = _interopRequireDefault(require("./rgb.js"));
 
-var _array = _interopRequireDefault(require("./array.js"));
+var _array = require("./array.js");
 
 var _date = _interopRequireDefault(require("./date.js"));
 
@@ -12718,14 +12753,20 @@ var _string = _interopRequireDefault(require("./string.js"));
 
 var _constant = _interopRequireDefault(require("./constant.js"));
 
+var _numberArray = _interopRequireWildcard(require("./numberArray.js"));
+
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _default(a, b) {
   var t = typeof b,
       c;
-  return b == null || t === "boolean" ? (0, _constant.default)(b) : (t === "number" ? _number.default : t === "string" ? (c = (0, _d3Color.color)(b)) ? (b = c, _rgb.default) : _string.default : b instanceof _d3Color.color ? _rgb.default : b instanceof Date ? _date.default : Array.isArray(b) ? _array.default : typeof b.valueOf !== "function" && typeof b.toString !== "function" || isNaN(b) ? _object.default : _number.default)(a, b);
+  return b == null || t === "boolean" ? (0, _constant.default)(b) : (t === "number" ? _number.default : t === "string" ? (c = (0, _d3Color.color)(b)) ? (b = c, _rgb.default) : _string.default : b instanceof _d3Color.color ? _rgb.default : b instanceof Date ? _date.default : (0, _numberArray.isNumberArray)(b) ? _numberArray.default : Array.isArray(b) ? _array.genericArray : typeof b.valueOf !== "function" && typeof b.toString !== "function" || isNaN(b) ? _object.default : _number.default)(a, b);
 }
-},{"d3-color":"node_modules/d3-color/src/index.js","./rgb.js":"node_modules/d3-interpolate/src/rgb.js","./array.js":"node_modules/d3-interpolate/src/array.js","./date.js":"node_modules/d3-interpolate/src/date.js","./number.js":"node_modules/d3-interpolate/src/number.js","./object.js":"node_modules/d3-interpolate/src/object.js","./string.js":"node_modules/d3-interpolate/src/string.js","./constant.js":"node_modules/d3-interpolate/src/constant.js"}],"node_modules/d3-interpolate/src/discrete.js":[function(require,module,exports) {
+},{"d3-color":"node_modules/d3-color/src/index.js","./rgb.js":"node_modules/d3-interpolate/src/rgb.js","./array.js":"node_modules/d3-interpolate/src/array.js","./date.js":"node_modules/d3-interpolate/src/date.js","./number.js":"node_modules/d3-interpolate/src/number.js","./object.js":"node_modules/d3-interpolate/src/object.js","./string.js":"node_modules/d3-interpolate/src/string.js","./constant.js":"node_modules/d3-interpolate/src/constant.js","./numberArray.js":"node_modules/d3-interpolate/src/numberArray.js"}],"node_modules/d3-interpolate/src/discrete.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -12765,8 +12806,8 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = _default;
 
 function _default(a, b) {
-  return a = +a, b -= a, function (t) {
-    return Math.round(a + b * t);
+  return a = +a, b = +b, function (t) {
+    return Math.round(a * (1 - t) + b * t);
   };
 }
 },{}],"node_modules/d3-interpolate/src/transform/decompose.js":[function(require,module,exports) {
@@ -13239,6 +13280,12 @@ Object.defineProperty(exports, "interpolateNumber", {
     return _number.default;
   }
 });
+Object.defineProperty(exports, "interpolateNumberArray", {
+  enumerable: true,
+  get: function () {
+    return _numberArray.default;
+  }
+});
 Object.defineProperty(exports, "interpolateObject", {
   enumerable: true,
   get: function () {
@@ -13364,6 +13411,8 @@ var _hue = _interopRequireDefault(require("./hue.js"));
 
 var _number = _interopRequireDefault(require("./number.js"));
 
+var _numberArray = _interopRequireDefault(require("./numberArray.js"));
+
 var _object = _interopRequireDefault(require("./object.js"));
 
 var _round = _interopRequireDefault(require("./round.js"));
@@ -13393,7 +13442,7 @@ function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-},{"./value.js":"node_modules/d3-interpolate/src/value.js","./array.js":"node_modules/d3-interpolate/src/array.js","./basis.js":"node_modules/d3-interpolate/src/basis.js","./basisClosed.js":"node_modules/d3-interpolate/src/basisClosed.js","./date.js":"node_modules/d3-interpolate/src/date.js","./discrete.js":"node_modules/d3-interpolate/src/discrete.js","./hue.js":"node_modules/d3-interpolate/src/hue.js","./number.js":"node_modules/d3-interpolate/src/number.js","./object.js":"node_modules/d3-interpolate/src/object.js","./round.js":"node_modules/d3-interpolate/src/round.js","./string.js":"node_modules/d3-interpolate/src/string.js","./transform/index.js":"node_modules/d3-interpolate/src/transform/index.js","./zoom.js":"node_modules/d3-interpolate/src/zoom.js","./rgb.js":"node_modules/d3-interpolate/src/rgb.js","./hsl.js":"node_modules/d3-interpolate/src/hsl.js","./lab.js":"node_modules/d3-interpolate/src/lab.js","./hcl.js":"node_modules/d3-interpolate/src/hcl.js","./cubehelix.js":"node_modules/d3-interpolate/src/cubehelix.js","./piecewise.js":"node_modules/d3-interpolate/src/piecewise.js","./quantize.js":"node_modules/d3-interpolate/src/quantize.js"}],"node_modules/d3-timer/src/timer.js":[function(require,module,exports) {
+},{"./value.js":"node_modules/d3-interpolate/src/value.js","./array.js":"node_modules/d3-interpolate/src/array.js","./basis.js":"node_modules/d3-interpolate/src/basis.js","./basisClosed.js":"node_modules/d3-interpolate/src/basisClosed.js","./date.js":"node_modules/d3-interpolate/src/date.js","./discrete.js":"node_modules/d3-interpolate/src/discrete.js","./hue.js":"node_modules/d3-interpolate/src/hue.js","./number.js":"node_modules/d3-interpolate/src/number.js","./numberArray.js":"node_modules/d3-interpolate/src/numberArray.js","./object.js":"node_modules/d3-interpolate/src/object.js","./round.js":"node_modules/d3-interpolate/src/round.js","./string.js":"node_modules/d3-interpolate/src/string.js","./transform/index.js":"node_modules/d3-interpolate/src/transform/index.js","./zoom.js":"node_modules/d3-interpolate/src/zoom.js","./rgb.js":"node_modules/d3-interpolate/src/rgb.js","./hsl.js":"node_modules/d3-interpolate/src/hsl.js","./lab.js":"node_modules/d3-interpolate/src/lab.js","./hcl.js":"node_modules/d3-interpolate/src/hcl.js","./cubehelix.js":"node_modules/d3-interpolate/src/cubehelix.js","./piecewise.js":"node_modules/d3-interpolate/src/piecewise.js","./quantize.js":"node_modules/d3-interpolate/src/quantize.js"}],"node_modules/d3-timer/src/timer.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -16047,6 +16096,10 @@ function brush(dim) {
 
   brush.filter = function (_) {
     return arguments.length ? (filter = typeof _ === "function" ? _ : (0, _constant.default)(!!_), brush) : filter;
+  };
+
+  brush.touchable = function (_) {
+    return arguments.length ? (touchable = typeof _ === "function" ? _ : (0, _constant.default)(!!_), brush) : touchable;
   };
 
   brush.handleSize = function (_) {
@@ -39622,25 +39675,38 @@ function _iterableToArrayLimit(arr, i) { if (!(Symbol.iterator in Object(arr) ||
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
-var query = "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX dc: <http://purl.org/dc/elements/1.1/>\nPREFIX dct: <http://purl.org/dc/terms/>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX edm: <http://www.europeana.eu/schemas/edm/>\nPREFIX foaf: <http://xmlns.com/foaf/0.1/>\nPREFIX hdlh: <https://hdl.handle.net/20.500.11840/termmaster>\nPREFIX wgs84: <http://www.w3.org/2003/01/geo/wgs84_pos#>\nPREFIX geo: <http://www.opengis.net/ont/geosparql#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX gn: <http://www.geonames.org/ontology#>\nPREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nblabal\n# een foto per land (met type, img, lat en long van de plaats\nSELECT  (SAMPLE(?cho) AS ?cho)\n\t\t\t\t(SAMPLE(?title) AS ?title)\n        (SAMPLE(?typeLabel) AS ?type)\n        (SAMPLE(?img) AS ?img)\n        (SAMPLE(?lat) AS ?lat)\n        (SAMPLE(?long) AS ?long)\n        ?landLabel\n\nWHERE {\n  # vind alleen foto's\n  <https://hdl.handle.net/20.500.11840/termmaster1397> skos:narrower* ?type .\n  ?type skos:prefLabel ?typeLabel .\n  ?cho edm:object ?type .\n\n  # ?cho dc:title ?title .\n  ?cho edm:isShownBy ?img .\n  ?cho dc:title ?title .\n\n  # vind bij de objecten het land\n  ?cho dct:spatial ?place .\n  ?place skos:exactMatch/gn:parentCountry ?land .\n  # ?place skos:prefLabel ?placeName .\n  ?land gn:name ?landLabel .\n\n  # vind bij de plaats van de foto de lat/long\n  ?place skos:exactMatch/wgs84:lat ?lat .\n  ?place skos:exactMatch/wgs84:long ?long .\n\n} GROUP BY ?landLabel\nORDER BY ?landLabel\nLIMIT 10";
+var query = "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX dc: <http://purl.org/dc/elements/1.1/>\nPREFIX dct: <http://purl.org/dc/terms/>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX edm: <http://www.europeana.eu/schemas/edm/>\nPREFIX foaf: <http://xmlns.com/foaf/0.1/>\nPREFIX hdlh: <https://hdl.handle.net/20.500.11840/termmaster>\nPREFIX wgs84: <http://www.w3.org/2003/01/geo/wgs84_pos#>\nPREFIX geo: <http://www.opengis.net/ont/geosparql#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX gn: <http://www.geonames.org/ontology#>\nPREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\n# een foto per lat long (met type, img, lat en long van de plaats\nSELECT  (SAMPLE(?cho) AS ?cho)\n\t\t?title\n       #(SAMPLE(?title) AS ?title)\n        (SAMPLE(?typeLabel) AS ?type)\n        (SAMPLE(?img) AS ?img)\n\t\t\t\t(SAMPLE(?placeName) AS ?placeName)\n        (SAMPLE(?landLabel) AS ?landLabel)\n\t\t\t\t(SAMPLE(?date) AS ?date)\n\t\t\t\t(SAMPLE(?lat) AS ?lat)\n\t\t\t\t(SAMPLE(?long) AS ?long)\n\nWHERE {\n # vind alleen foto's\n <https://hdl.handle.net/20.500.11840/termmaster1397> skos:narrower* ?type .\n ?type skos:prefLabel ?typeLabel .\n ?cho edm:object ?type .\n\n ?cho edm:isShownBy ?img .\n ?cho dc:title ?title .\n\n # vind bij de plaats van de foto de lat/long\n ?cho dct:spatial ?place .\n ?place skos:exactMatch/wgs84:lat ?lat .\n ?place skos:exactMatch/wgs84:long ?long .\n\n # vind bij de plaats van de het land\n ?place skos:exactMatch/gn:parentCountry ?land .\n ?place skos:prefLabel ?placeName .\n ?land gn:name ?landLabel .\n\n ?cho dct:created ?date .\n BIND (xsd:gYear(?date) AS ?year) .\n FILTER (?year < xsd:gYear(\"2100\"))\n\n FILTER langMatches(lang(?title), \"ned\")\n\n} GROUP BY ?title\nLIMIT 10";
+var inputLabels = [{
+  year: '1850 - 1900'
+}, {
+  year: '1900 - 1950'
+}, {
+  year: '1950 - 2000'
+}];
 var endpoint = "https://api.data.netwerkdigitaalerfgoed.nl/datasets/ivo/NMVW/services/NMVW-06/sparql";
 var svg = (0, _d2.select)('svg');
+var svgDiv = (0, _d2.select)('.svgDiv');
+var detailsDiv = (0, _d2.select)('.detailsDiv');
 var width = 200;
 var height = 200;
 var projection = (0, _d2.geoNaturalEarth1)();
-var pathGenerator = (0, _d2.geoPath)().projection(projection); //functies setupMap() en drawMap() van Laurens
+var pathGenerator = (0, _d2.geoPath)().projection(projection);
+var g = svg.append('g'); //functies setupMap() en drawMap() van Laurens
 //https://beta.vizhub.com/Razpudding/6b3c5d10edba4c86babf4b6bc204c5f0
 
-setupMap();
-drawMap();
-zoomToMap();
-data(); //Alle data functies aanroepen
+drawMap(); // zoomToMap()
+
+getData();
+var data; // const height = 500;
+// const width = 800;
+// svg
+//  .attr(“viewBox”, “90 0 ” + width + ” ” + height)
+//Alle data functies aanroepen
 //Code van Laurens
 //https://beta.vizhub.com/Razpudding/2e039bf6e39a421180741285a8f735a3
 
-function data() {
-  var data;
-  return regeneratorRuntime.async(function data$(_context) {
+function getData() {
+  return regeneratorRuntime.async(function getData$(_context) {
     while (1) {
       switch (_context.prev = _context.next) {
         case 0:
@@ -39651,13 +39717,21 @@ function data() {
           data = _context.sent;
           //pas werken met data wanneer data is omgezet in json
           data = data.map(cleanData);
-          data = changeImageURL(data); //code van Laurens, aangepast naar type
-          // data = transformData(data)
+          data = changeImageURL(data);
+          data = addDateRange(data);
+          data = changeDateRange(data);
+          console.log("changeImageURL", data); // data = transformData(data)
+          //data = filterByYear(data)
+          // data = setupInput(data, inputLabels)
 
-          console.log(data);
-          data = plotImages(data);
+          console.log("filterByYear", data);
+          data = setupInput(data);
+          data = plotImages(data); //console.log('Schone Data:', data)
+          //selectionChanged();
 
-        case 7:
+          console.log('FilterDropdown', data);
+
+        case 12:
         case "end":
           return _context.stop();
       }
@@ -39668,7 +39742,7 @@ function data() {
 
 
 function loadJSONData(url, query) {
-  return d3.json(endpoint + "?query=" + encodeURIComponent(query) + "&format=json").then(function (data) {
+  return (0, _d2.json)(endpoint + "?query=" + encodeURIComponent(query) + "&format=json").then(function (data) {
     return data.results.bindings;
   });
 } //Code van Laurens
@@ -39685,7 +39759,18 @@ function cleanData(data) {
     result[key] = propValue.value;
   });
   return result;
-} //Vervang 'http' door 'https'
+} // //Nest the data per date
+// function transformData(source){
+//   let transformed =  d3.nest()
+// 		// .key(function(d) { return d.landLabel; })
+//   	.key(function(d) { return d.date; })
+// 		.entries(source);
+//   transformed.forEach(country => {
+//     country.amount = country.values.length
+//   })
+//   return transformed
+// }
+//Vervang 'http' door 'https'
 
 
 function changeImageURL(results) {
@@ -39693,72 +39778,234 @@ function changeImageURL(results) {
     result.img = result.img.replace('http', 'https');
   });
   return results;
-} // //Nest the data per type
-// function transformData(source){
-//   let transformed =  d3.nest()
-// 		.key(function(d) { return d.type; })
-// 		.entries(source);
-//   transformed.forEach(type => {
-//     type.amount = type.values.length
+} //Voeg een range van jaar toe aan de data
+
+
+function addDateRange(data) {
+  data.map(function (result) {
+    result.dateRange = result.date;
+  });
+  return data;
+}
+
+function changeDateRange(data) {
+  data.map(function (result) {
+    if (result.dateRange > 1849 && result.dateRange < 1900) {
+      result.dateRange = result.dateRange.replace(result.dateRange, '1850 - 1899');
+    }
+
+    if (result.dateRange > 1899 && result.dateRange < 1950) {
+      result.dateRange = result.dateRange.replace(result.dateRange, '1900 - 1949');
+    }
+
+    if (result.dateRange > 1949 && result.dateRange < 2000) {
+      result.dateRange = result.dateRange.replace(result.dateRange, '1950 - 1999');
+    }
+
+    if (result.dateRange > 1999) {
+      result.dateRange = result.dateRange.replace(result.dateRange, '2000 en later');
+    }
+  });
+  return data;
+} // //Voeg een range van jaar toe aan de data
+// function addDateRange(data){
+//   data.map(result => {
+// 		result.dateRange = function() {
+// 		if (result.data == '1903') {
+// 			console.log("BOE!")
+// 			newArray = data.filter(result => {
+// 				return result.date < 1900
+// 			})
+// 		}
+// 		}
 //   })
-//   return transformed
+// 	return data
 // }
 
 
-function setupMap() {
-  svg.append('path').attr('class', 'sphere').attr('d', pathGenerator({
-    type: 'Sphere'
-  }));
-}
-
 function drawMap() {
-  (0, _d2.json)('https://unpkg.com/world-atlas@1.1.4/world/110m.json').then(function (data) {
+  (0, _d2.json)('https://unpkg.com/world-atlas@1.1.4/world/50m.json').then(function (data) {
     var countries = (0, _topojson.feature)(data, data.objects.countries);
-    svg.selectAll('path').data(countries.features).enter().append('path').attr('class', 'country').attr('d', pathGenerator);
+    g.selectAll('path').data(countries.features).enter().append('path').attr('class', 'country').attr('d', pathGenerator);
   });
 }
 
-function zoomToMap() {
-  svg.call(d3.zoom().extent([[0, 0], [width, height]]).scaleExtent([1, 2]).on("zoom", zoomed));
-}
+function filterByYear(results) {
+  //Hulp van Coen
+  var newArray = results.filter(function (result) {
+    return result.date < 1900;
+  });
+  console.log('newArray: ', newArray);
+  return newArray;
+} // function filterByYear(test) {
+// g
+// 	.data(test)
+//
+// 	console.log("data:", test);
+//
+// 	test.map(jaar => {
+// 	  if (jaar.date < 1900) {
+// 	    console.log('test: ', jaar);
+// 			return jaar;
+// 			// test = jaar;
+// 	  }
+// 		// return test;
+// 	})
+//
+// test = jaar;
+// console.log("TEST:", test);
+// // return test;
+//
+// }
 
-function zoomed() {
-  svg.attr("transform", d3.event.transform);
-}
 
 function plotImages(dataImg) {
-  svg.selectAll('imageDiv').data(dataImg).enter() //dankzij hulp van Laurens
-  .append('image').attr("xlink:href", function (d) {
+  var images = g.selectAll('imageDiv').data(dataImg);
+  console.log(images);
+  images; // .join(
+  // 	enter => enter.append("image")
+  // 		.attr('xlink:href', d => d.img)
+  // 		.attr('class', 'images')
+  // 		.attr('x', function(d) {
+  // 			return projection([d.long, d.lat])[0]
+  // 		})
+  // 		.attr('y', function(d) {
+  // 			return projection([d.long, d.lat])[1]
+  // 		})
+  // 		.on("mouseover", d => showDetails(d))
+  // 		.on("mouseout", hideDetails);,
+  // update => update
+  // 		.attr('xlink:href', d => d.img)
+  // 		.attr('class', 'images')
+  // 		.attr('x', function(d) {
+  // 			return projection([d.long, d.lat])[0]
+  // 		})
+  // 		.attr('y', function(d) {
+  // 			return projection([d.long, d.lat])[1]
+  // 		})
+  // 		.on("mouseover", d => showDetails(d))
+  // 		.on("mouseout", hideDetails);,
+  // exit => exit.remove()
+
+  images.exit().remove().enter() //dankzij hulp van Laurens
+  .append('image').attr('xlink:href', function (d) {
     return d.img;
   }).attr('class', 'images').attr('x', function (d) {
     return projection([d.long, d.lat])[0];
   }).attr('y', function (d) {
     return projection([d.long, d.lat])[1];
-  }).on("mouseover", handleMouseOver); // .on("mouseout", handleMouseOut);
-
+  }).on("mouseover", function (d) {
+    return showDetails(d);
+  }).on("mouseout", hideDetails);
+  console.log('dataImg:', dataImg);
   return dataImg;
-} // Create Event Handlers for mouse
-
-
-function handleMouseOver(data) {
-  // Add interactivity
-  // Specify where to put label of text
-  svg //.data(data)
-  .append("text").text('test').attr('class', 'tekst'); //         	.attr('x', function(d) {
-  //   return projection([d.long, d.lat])[0]
-  // })
-  // .attr('y', function(d) {
-  //   return projection([d.long, d.lat])[1]
-  // })
-  // .text(function() {
-  //   return [d.x, d.y];  // Value of the text
-  // });
-  //console.log(text)
-  // .text(function() {
-  // return [d.x, d.y];  // Value of the text
-  // });
 }
-},{"babel-polyfill":"node_modules/babel-polyfill/lib/index.js","d3":"node_modules/d3/index.js","topojson":"node_modules/topojson/index.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+
+function showDetails(d) {
+  detailsDiv.append("h2").attr('class', 'DetailsTekst').text(d.title);
+  detailsDiv.append("p").attr('class', 'DetailsTekst').text('Plaats: ' + d.placeName + ", " + d.landLabel);
+  detailsDiv.append("p").attr('class', 'DetailsTekst').text('Jaar: ' + d.date);
+  detailsDiv.append("img").attr('src', d.img).attr('class', 'DetailsImg');
+}
+
+function hideDetails() {
+  detailsDiv.selectAll('h2, img, p').remove();
+}
+
+svg.call((0, _d2.zoom)().on('zoom', function () {
+  g.attr('transform', _d2.event.transform);
+})); // window.onload = function(){
+// 		var schema = {
+// 				fields: [
+// 						{type: 'dropdown', display: 'Country',
+// 								values: ['1850 - 1900', '1900 - 1950', '1950 - 2000']
+// 						}
+// 				]
+// 		};
+//
+// 		var form = d3.select("form");
+//
+// 		var p = form.selectAll("p")
+// 				.data(schema.fields)
+// 				.enter()
+// 				.append("p")
+// 				.each(function(d){
+// 						var self = d3.select(this);
+// 						var label = self.append("label")
+// 								.text(d.display)
+// 								.style("width", "100px")
+// 								.style("display", "inline-block");
+//
+// 						if(d.type == 'dropdown'){
+// 						var select = self.append("select")
+// 										.attr("name", "country")
+// 										.selectAll("option")
+// 										.data(d.values)
+// 										.enter()
+// 										.append("option")
+// 										.text(function(d) { return d; });
+// 						}
+//
+// 				});
+// }
+//Voorbeeld van Laurens
+// https://beta.vizhub.com/Razpudding/4a61de4a4034423a98ae79d0135781f7?edit=files&file=index.js
+
+function setupInput(data) {
+  var form = d3.select('form').append('select').on('change', selectionChanged).selectAll('option').data(data) // console.log(d)
+  .enter().append('option').attr('value', function (d) {
+    return d.dateRange;
+  }).text(function (d) {
+    return d.dateRange;
+  }); // console.log("form",form)
+  //.data(data)
+
+  console.log('data', data);
+  return data;
+} //This function will change the graph when the user selects another variable
+
+
+function selectionChanged() {
+  // console.log('hoi ', d)
+  //'this' refers to the form element!
+  console.log("Changing graph to reflect this variable", this.value);
+  var year = this.value;
+  console.log('year', year);
+  console.log('data', data); // setupScales()
+
+  var newArray;
+  console.log('this', this);
+
+  if (year == '1900 - 1949') {
+    newArray = data.filter(function (result) {
+      return result.date < 1920;
+    });
+  }
+
+  newArray = data;
+  newArray = plotImages(newArray);
+  console.log('newArray: ', newArray); // var test = plotImages(newArray)
+  // console.log("testlog",data)
+  // data.forEach(e =>
+  // 		if (e.cho == test.cho) {
+  //
+  // 		}
+  // 	)
+  // )
+
+  return newArray; //newArray = plotImages()
+  //data = newArray;
+} // function filterByYear(results) {
+// //Hulp van Coen
+// let newArray = results.filter(result => {
+// 	return result.date < 1900
+// })
+//
+// console.log('newArray: ', newArray)
+//
+// return newArray
+// }
+},{"babel-polyfill":"node_modules/babel-polyfill/lib/index.js","d3":"node_modules/d3/index.js","topojson":"node_modules/topojson/index.js"}],"../../.nvm/versions/node/v12.12.0/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -39786,7 +40033,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63221" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61015" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
@@ -39962,5 +40209,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["node_modules/parcel-bundler/src/builtins/hmr-runtime.js","index.js"], null)
+},{}]},{},["../../.nvm/versions/node/v12.12.0/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js","index.js"], null)
 //# sourceMappingURL=/frontend-data.e31bb0bc.js.map

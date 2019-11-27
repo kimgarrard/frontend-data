@@ -117,156 +117,79 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"bundle.js":[function(require,module,exports) {
-function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
+})({"../../../.nvm/versions/node/v12.12.0/lib/node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
+var bundleURL = null;
 
-function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
+function getBundleURLCached() {
+  if (!bundleURL) {
+    bundleURL = getBundleURL();
+  }
 
-function _iterableToArrayLimit(arr, i) { if (!(Symbol.iterator in Object(arr) || Object.prototype.toString.call(arr) === "[object Arguments]")) { return; } var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+  return bundleURL;
+}
 
-function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+function getBundleURL() {
+  // Attempt to find the URL of the current script and use that as the base URL
+  try {
+    throw new Error();
+  } catch (err) {
+    var matches = ('' + err.stack).match(/(https?|file|ftp|chrome-extension|moz-extension):\/\/[^)\n]+/g);
 
-(function (d3$1, topojson) {
-  'use strict';
+    if (matches) {
+      return getBaseURL(matches[0]);
+    }
+  }
 
-  var query = "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX dc: <http://purl.org/dc/elements/1.1/>\nPREFIX dct: <http://purl.org/dc/terms/>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX edm: <http://www.europeana.eu/schemas/edm/>\nPREFIX foaf: <http://xmlns.com/foaf/0.1/>\nPREFIX hdlh: <https://hdl.handle.net/20.500.11840/termmaster>\nPREFIX wgs84: <http://www.w3.org/2003/01/geo/wgs84_pos#>\nPREFIX geo: <http://www.opengis.net/ont/geosparql#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX gn: <http://www.geonames.org/ontology#>\nPREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\n\n# een foto per land (met type, img, lat en long van de plaats\nSELECT  (SAMPLE(?cho) AS ?cho) \n\t\t\t\t(SAMPLE(?title) AS ?title) \n        (SAMPLE(?typeLabel) AS ?type) \n        (SAMPLE(?img) AS ?img) \n        (SAMPLE(?lat) AS ?lat)\n        (SAMPLE(?long) AS ?long)\n        ?landLabel \n\nWHERE {\n  # vind alleen foto's\n  <https://hdl.handle.net/20.500.11840/termmaster1397> skos:narrower* ?type .\n  ?type skos:prefLabel ?typeLabel .   \n  ?cho edm:object ?type .\n\n  # ?cho dc:title ?title .\n  ?cho edm:isShownBy ?img .\n  ?cho dc:title ?title .\n\n  # vind bij de objecten het land\n  ?cho dct:spatial ?place .\n  ?place skos:exactMatch/gn:parentCountry ?land .\n  # ?place skos:prefLabel ?placeName .\n  ?land gn:name ?landLabel .\n  \n  # vind bij de plaats van de foto de lat/long\n  ?place skos:exactMatch/wgs84:lat ?lat .\n  ?place skos:exactMatch/wgs84:long ?long .      \n\n} GROUP BY ?landLabel\nORDER BY ?landLabel \nLIMIT 10";
-  var endpoint = "https://api.data.netwerkdigitaalerfgoed.nl/datasets/ivo/NMVW/services/NMVW-06/sparql";
-  var svg = d3$1.select('svg');
-  var width = 200;
-  var height = 200;
-  var projection = d3$1.geoNaturalEarth1();
-  var pathGenerator = d3$1.geoPath().projection(projection); //functies setupMap() en drawMap() van Laurens
-  //https://beta.vizhub.com/Razpudding/6b3c5d10edba4c86babf4b6bc204c5f0
+  return '/';
+}
 
-  setupMap();
-  drawMap();
-  zoomToMap();
-  data(); //Alle data functies aanroepen
-  //Code van Laurens
-  //https://beta.vizhub.com/Razpudding/2e039bf6e39a421180741285a8f735a3
+function getBaseURL(url) {
+  return ('' + url).replace(/^((?:https?|file|ftp|chrome-extension|moz-extension):\/\/.+)\/[^/]+$/, '$1') + '/';
+}
 
-  function data() {
-    var data;
-    return regeneratorRuntime.async(function data$(_context) {
-      while (1) {
-        switch (_context.prev = _context.next) {
-          case 0:
-            _context.next = 2;
-            return regeneratorRuntime.awrap(loadJSONData(endpoint, query));
+exports.getBundleURL = getBundleURLCached;
+exports.getBaseURL = getBaseURL;
+},{}],"../../../.nvm/versions/node/v12.12.0/lib/node_modules/parcel-bundler/src/builtins/css-loader.js":[function(require,module,exports) {
+var bundle = require('./bundle-url');
 
-          case 2:
-            data = _context.sent;
-            //pas werken met data wanneer data is omgezet in json
-            data = data.map(cleanData);
-            data = changeImageURL(data); //code van Laurens, aangepast naar type
-            // data = transformData(data)
+function updateLink(link) {
+  var newLink = link.cloneNode();
 
-            console.log(data);
-            data = plotImages(data);
+  newLink.onload = function () {
+    link.remove();
+  };
 
-          case 7:
-          case "end":
-            return _context.stop();
-        }
+  newLink.href = link.href.split('?')[0] + '?' + Date.now();
+  link.parentNode.insertBefore(newLink, link.nextSibling);
+}
+
+var cssTimeout = null;
+
+function reloadCSS() {
+  if (cssTimeout) {
+    return;
+  }
+
+  cssTimeout = setTimeout(function () {
+    var links = document.querySelectorAll('link[rel="stylesheet"]');
+
+    for (var i = 0; i < links.length; i++) {
+      if (bundle.getBaseURL(links[i].href) === bundle.getBundleURL()) {
+        updateLink(links[i]);
       }
-    });
-  } //Code van Laurens
-  //Load the data and return a promise which resolves with said data
+    }
 
+    cssTimeout = null;
+  }, 50);
+}
 
-  function loadJSONData(url, query) {
-    return d3$1.json(endpoint + "?query=" + encodeURIComponent(query) + "&format=json").then(function (data) {
-      return data.results.bindings;
-    });
-  } //Code van Laurens
-  //This function gets the nested value out of the object in each property in our data
+module.exports = reloadCSS;
+},{"./bundle-url":"../../../.nvm/versions/node/v12.12.0/lib/node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"styles.css":[function(require,module,exports) {
+var reloadCSS = require('_css_loader');
 
-
-  function cleanData(data) {
-    var result = {};
-    Object.entries(data).map(function (_ref) {
-      var _ref2 = _slicedToArray(_ref, 2),
-          key = _ref2[0],
-          propValue = _ref2[1];
-
-      result[key] = propValue.value;
-    });
-    return result;
-  } //Vervang 'http' door 'https'
-
-
-  function changeImageURL(results) {
-    results.map(function (result) {
-      result.img = result.img.replace('http', 'https');
-    });
-    return results;
-  } // //Nest the data per type
-  // function transformData(source){
-  //   let transformed =  d3.nest()
-  // 		.key(function(d) { return d.type; })
-  // 		.entries(source);
-  //   transformed.forEach(type => {
-  //     type.amount = type.values.length
-  //   })
-  //   return transformed
-  // }
-
-
-  function setupMap() {
-    svg.append('path').attr('class', 'sphere').attr('d', pathGenerator({
-      type: 'Sphere'
-    }));
-  }
-
-  function drawMap() {
-    d3$1.json('https://unpkg.com/world-atlas@1.1.4/world/110m.json').then(function (data) {
-      var countries = topojson.feature(data, data.objects.countries);
-      svg.selectAll('path').data(countries.features).enter().append('path').attr('class', 'country').attr('d', pathGenerator);
-    });
-  }
-
-  function zoomToMap() {
-    svg.call(d3.zoom().extent([[0, 0], [width, height]]).scaleExtent([1, 2]).on("zoom", zoomed));
-  }
-
-  function zoomed() {
-    svg.attr("transform", d3.event.transform);
-  }
-
-  function plotImages(dataImg) {
-    svg.selectAll('imageDiv').data(dataImg).enter() //dankzij hulp van Laurens
-    .append('image').attr("xlink:href", function (d) {
-      return d.img;
-    }).attr('class', 'images').attr('x', function (d) {
-      return projection([d.long, d.lat])[0];
-    }).attr('y', function (d) {
-      return projection([d.long, d.lat])[1];
-    }).on("mouseover", handleMouseOver); // .on("mouseout", handleMouseOut);
-
-    return dataImg;
-  } // Create Event Handlers for mouse
-
-
-  function handleMouseOver(data) {
-    // Add interactivity
-    // Specify where to put label of text
-    svg //.data(data)
-    .append("text").text('test').attr('class', 'tekst'); //         	.attr('x', function(d) {
-    //   return projection([d.long, d.lat])[0]
-    // })
-    // .attr('y', function(d) {
-    //   return projection([d.long, d.lat])[1]
-    // })
-    // .text(function() {
-    //   return [d.x, d.y];  // Value of the text
-    // });
-    //console.log(text)
-    // .text(function() {
-    // return [d.x, d.y];  // Value of the text
-    // });
-  }
-})(d3, topojson);
-},{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+module.hot.dispose(reloadCSS);
+module.hot.accept(reloadCSS);
+},{"_css_loader":"../../../.nvm/versions/node/v12.12.0/lib/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"../../../.nvm/versions/node/v12.12.0/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -294,7 +217,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60046" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52358" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
@@ -470,5 +393,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["node_modules/parcel-bundler/src/builtins/hmr-runtime.js","bundle.js"], null)
-//# sourceMappingURL=/bundle.81605655.js.map
+},{}]},{},["../../../.nvm/versions/node/v12.12.0/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js"], null)
+//# sourceMappingURL=/styles.js.map

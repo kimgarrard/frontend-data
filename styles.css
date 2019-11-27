@@ -1,13 +1,22 @@
+@font-face {
+    font-family: "SofiaRegular";
+    src: url("fonts/SofiaProRegular.ttf") format("truetype");
+}
+
 body {
   margin: 0px;
-  overflow: hidden;
   background-color: #c5faf4;
-  background-color: white;
+  background-color: black;
 }
 
 h1 {
 	font-family: Copperplate, Arial;
-  font-size: 2.5em;
+  font-size: 3em;
+  color: white;
+}
+
+form {
+  color: white;
 }
 
 .titleDiv, .svgDiv {
@@ -18,56 +27,56 @@ h1 {
 
 .sphere {
   fill: #c5faf4;
-  width: 100%;
+  fill: black;
 }
 
 .country {
   fill: #a1a1a1;
-  stroke: white;
-  stroke-width: 0.2;
+  fill: black;
+  fill: #c5faf4;
+  stroke: black;
+  stroke-width: 0.1;
   overflow: hidden;
-  width: 100%;
-}
-
-.country:hover{
-	cursor: pointer;
-  fill: gray;
 }
 
 svg {
-  width: 100vw;
-  height: 100vw;
+  width: 100%;
+  height: 100%;
 }
 
-imageDiv {
+.imageDiv {
   fill: white;
-	stroke: black;
+	stroke: white;
   stroke-width: .5;
+  width: 100%;
+  height: 100%;
 }
 
 .images {
   width: 2em;
   height: 2em;
   mix-blend-mode: luminosity;
+  mix-blend-mode: darken;
 }
 
 .images:hover {
   mix-blend-mode: normal;
+  cursor: pointer;
 }
 
 .detailsDiv {
 	background-color: rgba(0,0,0,0.5);
-  //padding: 1em;
   position: absolute;
-  max-width: 30vw;
+  max-width: 25%;
+  position: fixed;
+  font-family: SofiaRegular;
 }
 
 .DetailsTekst {
   color: white;
-  margin: 1em;
+  margin: 40px;
 }
 
 .DetailsImg {
   width: 100%;
 }
-
