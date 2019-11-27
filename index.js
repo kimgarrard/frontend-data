@@ -57,7 +57,7 @@ WHERE {
  FILTER langMatches(lang(?title), "ned")
 
 } GROUP BY ?title
-LIMIT 10`
+LIMIT 200`
 
 
 
@@ -93,6 +93,7 @@ drawMap()
 // zoomToMap()
 getData()
 let data;
+let filteredData
 
 // const height = 500;
 // const width = 800;
@@ -110,15 +111,16 @@ async function getData() {
 	data = addDateRange(data)
 	data = changeDateRange(data)
 	console.log("changeImageURL", data)
-  // data = transformData(data)
+	console.log('before', data)
+  filteredData = transformData(data)
+	console.log('after', data)
 	//data = filterByYear(data)
 	// data = setupInput(data, inputLabels)
-	console.log("filterByYear", data)
 	data = setupInput(data)
-  data = plotImages(data)
+  plotImages(data)
   //console.log('Schone Data:', data)
 	//selectionChanged();
-	console.log('FilterDropdown', data)
+	console.log("filteredData", filteredData)
 }
 
 //Code van Laurens
@@ -139,17 +141,17 @@ function cleanData(data){
    return result
 }
 
-// //Nest the data per date
-// function transformData(source){
-//   let transformed =  d3.nest()
-// 		// .key(function(d) { return d.landLabel; })
-//   	.key(function(d) { return d.date; })
-// 		.entries(source);
-//   transformed.forEach(country => {
-//     country.amount = country.values.length
-//   })
-//   return transformed
-// }
+//Nest the data per date
+function transformData(source){
+  let transformed =  d3.nest()
+		// .key(function(d) { return d.landLabel; })
+  	.key(function(d) { return d.dateRange; })
+		.entries(source);
+  transformed.forEach(country => {
+    country.amount = country.values.length
+  })
+  return transformed
+}
 
 //Vervang 'http' door 'https'
 function changeImageURL(results){
@@ -159,15 +161,16 @@ function changeImageURL(results){
   return results
 }
 
-//Voeg een range van jaar toe aan de data
-function addDateRange(data){
+//Voeg een datRange toe met het exacte jaartal
+function addDateRange(){
   data.map(result => {
 		result.dateRange = result.date
   })
 	return data
 }
 
-function changeDateRange(data){
+//Vervang het jaartal door de juiste dateRange
+function changeDateRange(){
   data.map(result => {
 		if (result.dateRange > 1849 && result.dateRange < 1900) {
 			result.dateRange = result.dateRange.replace(result.dateRange, '1850 - 1899')
@@ -248,43 +251,33 @@ return newArray
 //
 // }
 
-function plotImages(dataImg) {
+function plotImages(plottableImages) {
+
+		console.log('plottableImages', plottableImages)
+
     let images = g
       .selectAll('imageDiv')
-      .data(dataImg)
+      .data(plottableImages)
 
-		console.log(images)
+		//exit
+		g.selectAll('image').remove();
+
+		//update
 		images
-			// .join(
-			// 	enter => enter.append("image")
-			// 		.attr('xlink:href', d => d.img)
-			// 		.attr('class', 'images')
-			// 		.attr('x', function(d) {
-			// 			return projection([d.long, d.lat])[0]
-			// 		})
-			// 		.attr('y', function(d) {
-			// 			return projection([d.long, d.lat])[1]
-			// 		})
-			// 		.on("mouseover", d => showDetails(d))
-			// 		.on("mouseout", hideDetails);,
-			// update => update
-			// 		.attr('xlink:href', d => d.img)
-			// 		.attr('class', 'images')
-			// 		.attr('x', function(d) {
-			// 			return projection([d.long, d.lat])[0]
-			// 		})
-			// 		.attr('y', function(d) {
-			// 			return projection([d.long, d.lat])[1]
-			// 		})
-			// 		.on("mouseover", d => showDetails(d))
-			// 		.on("mouseout", hideDetails);,
-			// exit => exit.remove()
+			.attr('xlink:href', d => d.img)
+			.attr('class', 'images')
+			.attr('x', function(d) {
+				return projection([d.long, d.lat])[0]
+			})
+			.attr('y', function(d) {
+				return projection([d.long, d.lat])[1]
+			})
+			.on("mouseover", d => showDetails(d))
+			.on("mouseout", hideDetails)
 
-			images
-					.exit()
-					.remove()
-
-		.enter()
+		//enter
+		images
+		  .enter()
   		//dankzij hulp van Laurens
       .append('image')
         .attr('xlink:href', d => d.img)
@@ -298,11 +291,10 @@ function plotImages(dataImg) {
   			.on("mouseover", d => showDetails(d))
         .on("mouseout", hideDetails);
 
-		console.log('dataImg:', dataImg)
-
-  	return dataImg;
+		console.log('enter update exit', images)
 
 }
+
 
 function showDetails(d) {
     detailsDiv
@@ -381,17 +373,18 @@ svg.call(zoom().on('zoom', () => {
 
 //Voorbeeld van Laurens
 // https://beta.vizhub.com/Razpudding/4a61de4a4034423a98ae79d0135781f7?edit=files&file=index.js
-function setupInput(data){
+function setupInput(){
   const form = d3.select('form')
     .append('select')
+		.attr('class', 'select-css')
     .on('change', selectionChanged)
     .selectAll('option')
-    .data(data)
+    .data(filteredData)
 		// console.log(d)
     .enter()
     .append('option')
-    .attr('value', d => d.dateRange)
-    .text(d => d.dateRange)
+    .attr('value', d => d.key)
+    .text(d => d.key)
     // console.log("form",form)
 		//.data(data)
 		console.log('data', data)
@@ -401,44 +394,55 @@ function setupInput(data){
 
 //This function will change the graph when the user selects another variable
 function selectionChanged() {
-	// console.log('hoi ', d)
   //'this' refers to the form element!
   console.log("Changing graph to reflect this variable", this.value)
 	let year = this.value;
 	console.log('year', year)
 
-	console.log('data', data)
-  // setupScales()
+	console.log('dataSelection', data)
 
 	let newArray;
+	let pNumber = select('.numberOfImages')
+
+	console.log('testestrest', filteredData)
 
 	console.log('this', this)
-	if (year == '1900 - 1949') {
+	if (year == '1850 - 1899') {
+		pNumber.text('Aantal fotos: ' + filteredData[2].amount)
 		newArray = data.filter(result => {
-			return result.date < 1920
+			return result.dateRange == '1850 - 1899'
 		})
 	}
 
-	newArray = data;
-	newArray = plotImages(newArray)
+	if (year == '1900 - 1949') {
+		pNumber.text('Aantal fotos: ' + filteredData[0].amount)
+		newArray = data.filter(result => {
+			return result.dateRange == '1900 - 1949'
+		})
+	}
+
+	if (year == '1950 - 1999') {
+		pNumber.text('Aantal fotos: ' + filteredData[1].amount)
+		newArray = data.filter(result => {
+			return result.dateRange == '1950 - 1999'
+		})
+	}
+
+	if (year == '2000 en later') {
+		pNumber.text('Aantal fotos: ' + filteredData[3].amount)
+		newArray = data.filter(result => {
+			return result.dateRange == '2000 en later'
+		})
+	}
+
+	plotImages(newArray)
 
 	console.log('newArray: ', newArray)
 
-	// var test = plotImages(newArray)
-	// console.log("testlog",data)
-	// data.forEach(e =>
-	// 		if (e.cho == test.cho) {
-	//
-	// 		}
-	// 	)
-	// )
-
 	return newArray;
 
-	//newArray = plotImages()
-
-	//data = newArray;
 }
+
 
 
 

@@ -15,6 +15,13 @@ h1 {
   color: white;
 }
 
+.numberOfImages {
+  color: white;
+  position: absolute;
+  margin-top: -1.5em;
+  font-family: SofiaRegular;
+}
+
 form {
   color: white;
 }
@@ -62,6 +69,7 @@ svg {
 .images:hover {
   mix-blend-mode: normal;
   cursor: pointer;
+  position: absolute;
 }
 
 .detailsDiv {
@@ -79,6 +87,32 @@ svg {
 
 .DetailsImg {
   width: 100%;
+}
+
+.select-css {
+    display: block;
+    font-family: Copperplate, Arial;
+    font-size: 5em;
+    color: white;
+    border: 1px solid transparent;
+    padding: .6em 0.2em .5em .8em;
+    //width: 100%;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: rgba(0,0,0,0.5);
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+.select-css::-ms-expand {
+    display: none;
+}
+.select-css:hover {
+    border: 1px solid white;
+}
+.select-css option {
+    font-weight:normal;
 }
 
 

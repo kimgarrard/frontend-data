@@ -39675,7 +39675,7 @@ function _iterableToArrayLimit(arr, i) { if (!(Symbol.iterator in Object(arr) ||
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
-var query = "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX dc: <http://purl.org/dc/elements/1.1/>\nPREFIX dct: <http://purl.org/dc/terms/>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX edm: <http://www.europeana.eu/schemas/edm/>\nPREFIX foaf: <http://xmlns.com/foaf/0.1/>\nPREFIX hdlh: <https://hdl.handle.net/20.500.11840/termmaster>\nPREFIX wgs84: <http://www.w3.org/2003/01/geo/wgs84_pos#>\nPREFIX geo: <http://www.opengis.net/ont/geosparql#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX gn: <http://www.geonames.org/ontology#>\nPREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\n# een foto per lat long (met type, img, lat en long van de plaats\nSELECT  (SAMPLE(?cho) AS ?cho)\n\t\t?title\n       #(SAMPLE(?title) AS ?title)\n        (SAMPLE(?typeLabel) AS ?type)\n        (SAMPLE(?img) AS ?img)\n\t\t\t\t(SAMPLE(?placeName) AS ?placeName)\n        (SAMPLE(?landLabel) AS ?landLabel)\n\t\t\t\t(SAMPLE(?date) AS ?date)\n\t\t\t\t(SAMPLE(?lat) AS ?lat)\n\t\t\t\t(SAMPLE(?long) AS ?long)\n\nWHERE {\n # vind alleen foto's\n <https://hdl.handle.net/20.500.11840/termmaster1397> skos:narrower* ?type .\n ?type skos:prefLabel ?typeLabel .\n ?cho edm:object ?type .\n\n ?cho edm:isShownBy ?img .\n ?cho dc:title ?title .\n\n # vind bij de plaats van de foto de lat/long\n ?cho dct:spatial ?place .\n ?place skos:exactMatch/wgs84:lat ?lat .\n ?place skos:exactMatch/wgs84:long ?long .\n\n # vind bij de plaats van de het land\n ?place skos:exactMatch/gn:parentCountry ?land .\n ?place skos:prefLabel ?placeName .\n ?land gn:name ?landLabel .\n\n ?cho dct:created ?date .\n BIND (xsd:gYear(?date) AS ?year) .\n FILTER (?year < xsd:gYear(\"2100\"))\n\n FILTER langMatches(lang(?title), \"ned\")\n\n} GROUP BY ?title\nLIMIT 10";
+var query = "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX dc: <http://purl.org/dc/elements/1.1/>\nPREFIX dct: <http://purl.org/dc/terms/>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX edm: <http://www.europeana.eu/schemas/edm/>\nPREFIX foaf: <http://xmlns.com/foaf/0.1/>\nPREFIX hdlh: <https://hdl.handle.net/20.500.11840/termmaster>\nPREFIX wgs84: <http://www.w3.org/2003/01/geo/wgs84_pos#>\nPREFIX geo: <http://www.opengis.net/ont/geosparql#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX gn: <http://www.geonames.org/ontology#>\nPREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\n# een foto per lat long (met type, img, lat en long van de plaats\nSELECT  (SAMPLE(?cho) AS ?cho)\n\t\t?title\n       #(SAMPLE(?title) AS ?title)\n        (SAMPLE(?typeLabel) AS ?type)\n        (SAMPLE(?img) AS ?img)\n\t\t\t\t(SAMPLE(?placeName) AS ?placeName)\n        (SAMPLE(?landLabel) AS ?landLabel)\n\t\t\t\t(SAMPLE(?date) AS ?date)\n\t\t\t\t(SAMPLE(?lat) AS ?lat)\n\t\t\t\t(SAMPLE(?long) AS ?long)\n\nWHERE {\n # vind alleen foto's\n <https://hdl.handle.net/20.500.11840/termmaster1397> skos:narrower* ?type .\n ?type skos:prefLabel ?typeLabel .\n ?cho edm:object ?type .\n\n ?cho edm:isShownBy ?img .\n ?cho dc:title ?title .\n\n # vind bij de plaats van de foto de lat/long\n ?cho dct:spatial ?place .\n ?place skos:exactMatch/wgs84:lat ?lat .\n ?place skos:exactMatch/wgs84:long ?long .\n\n # vind bij de plaats van de het land\n ?place skos:exactMatch/gn:parentCountry ?land .\n ?place skos:prefLabel ?placeName .\n ?land gn:name ?landLabel .\n\n ?cho dct:created ?date .\n BIND (xsd:gYear(?date) AS ?year) .\n FILTER (?year < xsd:gYear(\"2100\"))\n\n FILTER langMatches(lang(?title), \"ned\")\n\n} GROUP BY ?title\nLIMIT 200";
 var inputLabels = [{
   year: '1850 - 1900'
 }, {
@@ -39697,7 +39697,8 @@ var g = svg.append('g'); //functies setupMap() en drawMap() van Laurens
 drawMap(); // zoomToMap()
 
 getData();
-var data; // const height = 500;
+var data;
+var filteredData; // const height = 500;
 // const width = 800;
 // svg
 //  .attr(“viewBox”, “90 0 ” + width + ” ” + height)
@@ -39720,18 +39721,19 @@ function getData() {
           data = changeImageURL(data);
           data = addDateRange(data);
           data = changeDateRange(data);
-          console.log("changeImageURL", data); // data = transformData(data)
-          //data = filterByYear(data)
+          console.log("changeImageURL", data);
+          console.log('before', data);
+          filteredData = transformData(data);
+          console.log('after', data); //data = filterByYear(data)
           // data = setupInput(data, inputLabels)
 
-          console.log("filterByYear", data);
           data = setupInput(data);
-          data = plotImages(data); //console.log('Schone Data:', data)
+          plotImages(data); //console.log('Schone Data:', data)
           //selectionChanged();
 
-          console.log('FilterDropdown', data);
+          console.log("filteredData", filteredData);
 
-        case 12:
+        case 14:
         case "end":
           return _context.stop();
       }
@@ -39759,18 +39761,19 @@ function cleanData(data) {
     result[key] = propValue.value;
   });
   return result;
-} // //Nest the data per date
-// function transformData(source){
-//   let transformed =  d3.nest()
-// 		// .key(function(d) { return d.landLabel; })
-//   	.key(function(d) { return d.date; })
-// 		.entries(source);
-//   transformed.forEach(country => {
-//     country.amount = country.values.length
-//   })
-//   return transformed
-// }
-//Vervang 'http' door 'https'
+} //Nest the data per date
+
+
+function transformData(source) {
+  var transformed = d3.nest() // .key(function(d) { return d.landLabel; })
+  .key(function (d) {
+    return d.dateRange;
+  }).entries(source);
+  transformed.forEach(function (country) {
+    country.amount = country.values.length;
+  });
+  return transformed;
+} //Vervang 'http' door 'https'
 
 
 function changeImageURL(results) {
@@ -39778,17 +39781,18 @@ function changeImageURL(results) {
     result.img = result.img.replace('http', 'https');
   });
   return results;
-} //Voeg een range van jaar toe aan de data
+} //Voeg een datRange toe met het exacte jaartal
 
 
-function addDateRange(data) {
+function addDateRange() {
   data.map(function (result) {
     result.dateRange = result.date;
   });
   return data;
-}
+} //Vervang het jaartal door de juiste dateRange
 
-function changeDateRange(data) {
+
+function changeDateRange() {
   data.map(function (result) {
     if (result.dateRange > 1849 && result.dateRange < 1900) {
       result.dateRange = result.dateRange.replace(result.dateRange, '1850 - 1899');
@@ -39859,35 +39863,23 @@ function filterByYear(results) {
 // }
 
 
-function plotImages(dataImg) {
-  var images = g.selectAll('imageDiv').data(dataImg);
-  console.log(images);
-  images; // .join(
-  // 	enter => enter.append("image")
-  // 		.attr('xlink:href', d => d.img)
-  // 		.attr('class', 'images')
-  // 		.attr('x', function(d) {
-  // 			return projection([d.long, d.lat])[0]
-  // 		})
-  // 		.attr('y', function(d) {
-  // 			return projection([d.long, d.lat])[1]
-  // 		})
-  // 		.on("mouseover", d => showDetails(d))
-  // 		.on("mouseout", hideDetails);,
-  // update => update
-  // 		.attr('xlink:href', d => d.img)
-  // 		.attr('class', 'images')
-  // 		.attr('x', function(d) {
-  // 			return projection([d.long, d.lat])[0]
-  // 		})
-  // 		.attr('y', function(d) {
-  // 			return projection([d.long, d.lat])[1]
-  // 		})
-  // 		.on("mouseover", d => showDetails(d))
-  // 		.on("mouseout", hideDetails);,
-  // exit => exit.remove()
+function plotImages(plottableImages) {
+  console.log('plottableImages', plottableImages);
+  var images = g.selectAll('imageDiv').data(plottableImages); //exit
 
-  images.exit().remove().enter() //dankzij hulp van Laurens
+  g.selectAll('image').remove(); //update
+
+  images.attr('xlink:href', function (d) {
+    return d.img;
+  }).attr('class', 'images').attr('x', function (d) {
+    return projection([d.long, d.lat])[0];
+  }).attr('y', function (d) {
+    return projection([d.long, d.lat])[1];
+  }).on("mouseover", function (d) {
+    return showDetails(d);
+  }).on("mouseout", hideDetails); //enter
+
+  images.enter() //dankzij hulp van Laurens
   .append('image').attr('xlink:href', function (d) {
     return d.img;
   }).attr('class', 'images').attr('x', function (d) {
@@ -39897,8 +39889,7 @@ function plotImages(dataImg) {
   }).on("mouseover", function (d) {
     return showDetails(d);
   }).on("mouseout", hideDetails);
-  console.log('dataImg:', dataImg);
-  return dataImg;
+  console.log('enter update exit', images);
 }
 
 function showDetails(d) {
@@ -39951,12 +39942,12 @@ svg.call((0, _d2.zoom)().on('zoom', function () {
 //Voorbeeld van Laurens
 // https://beta.vizhub.com/Razpudding/4a61de4a4034423a98ae79d0135781f7?edit=files&file=index.js
 
-function setupInput(data) {
-  var form = d3.select('form').append('select').on('change', selectionChanged).selectAll('option').data(data) // console.log(d)
+function setupInput() {
+  var form = d3.select('form').append('select').attr('class', 'select-css').on('change', selectionChanged).selectAll('option').data(filteredData) // console.log(d)
   .enter().append('option').attr('value', function (d) {
-    return d.dateRange;
+    return d.key;
   }).text(function (d) {
-    return d.dateRange;
+    return d.key;
   }); // console.log("form",form)
   //.data(data)
 
@@ -39966,35 +39957,47 @@ function setupInput(data) {
 
 
 function selectionChanged() {
-  // console.log('hoi ', d)
   //'this' refers to the form element!
   console.log("Changing graph to reflect this variable", this.value);
   var year = this.value;
   console.log('year', year);
-  console.log('data', data); // setupScales()
-
+  console.log('dataSelection', data);
   var newArray;
+  var pNumber = (0, _d2.select)('.numberOfImages');
+  console.log('testestrest', filteredData);
   console.log('this', this);
 
-  if (year == '1900 - 1949') {
+  if (year == '1850 - 1899') {
+    pNumber.text('Aantal fotos: ' + filteredData[2].amount);
     newArray = data.filter(function (result) {
-      return result.date < 1920;
+      return result.dateRange == '1850 - 1899';
     });
   }
 
-  newArray = data;
-  newArray = plotImages(newArray);
-  console.log('newArray: ', newArray); // var test = plotImages(newArray)
-  // console.log("testlog",data)
-  // data.forEach(e =>
-  // 		if (e.cho == test.cho) {
-  //
-  // 		}
-  // 	)
-  // )
+  if (year == '1900 - 1949') {
+    pNumber.text('Aantal fotos: ' + filteredData[0].amount);
+    newArray = data.filter(function (result) {
+      return result.dateRange == '1900 - 1949';
+    });
+  }
 
-  return newArray; //newArray = plotImages()
-  //data = newArray;
+  if (year == '1950 - 1999') {
+    pNumber.text('Aantal fotos: ' + filteredData[1].amount);
+    newArray = data.filter(function (result) {
+      return result.dateRange == '1950 - 1999';
+    });
+  }
+
+  if (year == '2000 en later') {
+    pNumber.text('Aantal fotos: ' + filteredData[3].amount);
+    newArray = data.filter(function (result) {
+      return result.dateRange == '2000 en later';
+    });
+  }
+
+  plotImages(newArray);
+  console.log('newArray: ', newArray);
+  return newArray;
 } // function filterByYear(results) {
 // //Hulp van Coen
 // let newArray = results.filter(result => {
@@ -40033,7 +40036,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61015" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59226" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
