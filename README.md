@@ -79,17 +79,18 @@ WHERE {
 ### Lege waardes
 Er komen geen lege waardes uit de data zelf. Elke foto heeft een titel, een afbeelding, een jaartal, een longitude & latitude en een land. Niet alle plaatsen / landen hebben een object, dit zou je ook kunnen zien als lege waardes. Bij deze plaatsen laat ik de foto niet zien op de kaart. 
 
-## Data opgeschoond
+## Data opgeschoond en genest
+De data die uit deze query komt heb ik ook opgeschoond. Zo heb ik ervoor gezorgd dat voor alle images 'https' komt te staan, in plaats van 'http'. Ook heb ik een nieuwe key aangemaakt, namelijke dateRange. Dit is een range waar het jaartal binnenvalt. De data heb ik weer genest met als key de dateRange. 
 
-De data die uit deze query komt heb ik ook opgeschoond. Zo heb ik ervoor gezorgd dat de nesting beter is en zorg ik dat er voor alle images 'https' komt te staan, in plaats van 'http'. De data ziet er in mijn console log als volgt uit:
+De data ziet er in mijn console log als volgt uit:
 
-<img width="652" alt="DataQuery" src="https://user-images.githubusercontent.com/43337685/68883516-81199f80-0711-11ea-90ad-dbd05bb0e963.png">
+GOEDE IMAGE NOG PLAATSEN!!
 
 ## Features
-
 - [x] Foto's geplot op een wereldkaart
-- [ ] Klikken door de tijd, je ziet de verandering van de foto's
-- [ ] Klikken op de foto's, je ziet de foto groot met een title en beschrijving 
+- [x] Hoveren over de foto's, je ziet de foto groot met een titel, plaats en jaartal.
+- [x] Klikken door de tijd, je ziet de verandering van de foto's
+- [x] In- en uitzoomen op de kaart
 
 ## Bronnen
 * [Clean Data](https://www.freecodecamp.org/news/the-junior-developers-guide-to-writing-super-clean-and-readable-code-cd2568e08aae/)
@@ -101,6 +102,8 @@ De data die uit deze query komt heb ik ook opgeschoond. Zo heb ik ervoor gezorgd
 
 ## Credits
 * Laurens, code van D3
+* Lennart, hulp met parcel en netlify
+* Kris, hulp met pushen naar github via Command Line
 * Manouk
 
 ## Wat ik heb geleerd
@@ -108,3 +111,5 @@ De data die uit deze query komt heb ik ook opgeschoond. Zo heb ik ervoor gezorgd
 * SPARQL meer leren
 * Werken met D3
 * Meer javascript kennis
+* Werken met parcel
+* Github pushen met Command Line
