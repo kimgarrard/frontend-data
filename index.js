@@ -257,7 +257,7 @@ function plotImages(plottableImages) {
 			.on("mouseout", hideDetails)
 
 		//exit
-		images.exit().remove();
+		images.remove();
 
 		console.log('enter update exit', images)
 
