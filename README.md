@@ -84,7 +84,7 @@ De data die uit deze query komt heb ik ook opgeschoond. Zo heb ik ervoor gezorgd
 
 De data ziet er in mijn console log als volgt uit:
 
-GOEDE IMAGE NOG PLAATSEN!!
+<img width="499" alt="DataConsole" src="https://user-images.githubusercontent.com/43337685/69813223-0a40d400-11f2-11ea-905d-bccffe9171eb.png">
 
 ## Features
 - [x] Foto's geplot op een wereldkaart
@@ -93,12 +93,12 @@ GOEDE IMAGE NOG PLAATSEN!!
 - [x] In- en uitzoomen op de kaart
 
 ## Bronnen
-* [Clean Data](https://www.freecodecamp.org/news/the-junior-developers-guide-to-writing-super-clean-and-readable-code-cd2568e08aae/)
-* [Functional Programming doc](https://docs.google.com/presentation/d/1ynCL4B4DyQ65V3cvjfZvbT2a9YrITbhUUUICoOjAP4c/edit#slide=id.g7081ab7627_0_38)
-* [Introductie D3](https://d3js.org/#introduction)
-* [YouTube tutorials D3 - 1](https://www.youtube.com/watch?v=-RQWC4I2I1s&list=PL9yYRbwpkykvOXrZumtZWbuaXWHvjD8gi&index=4)
-* [YouTube tutorials D3 - 2](https://www.youtube.com/watch?v=IyIAR65G-GQ&list=PL9yYRbwpkykvOXrZumtZWbuaXWHvjD8gi&index=12)
+* [YouTube tutorial D3 - enter, update, exit](https://www.youtube.com/watch?v=IyIAR65G-GQ&list=PL9yYRbwpkykvOXrZumtZWbuaXWHvjD8gi&index=12)
+* [YouTube tutorial D3 - Interaction](https://www.youtube.com/watch?v=9ZB1EgaJnBU)
+* [D3 Data transformeren - van Laurens](https://beta.vizhub.com/Razpudding/2e039bf6e39a421180741285a8f735a3?edit=files&file=index.js)
 * [D3 World Map - van Laurens](https://beta.vizhub.com/Razpudding/6b3c5d10edba4c86babf4b6bc204c5f0)
+* [D3 Interactive Bar Chart - van Laurens](https://beta.vizhub.com/Razpudding/0e37e2146acf4a8db9a55f6f3509f090?edit=files&file=index.js)
+* [Install parcel bundler](https://parceljs.org/getting_started.html)
 
 ## Credits
 * Laurens, code van D3
