@@ -12,6 +12,8 @@ Op de wereldkaart zie je foto's uit de collectie op de kaart geplot. De doelgroe
 ### Schetsen
 Voor mijn idee heb ik ook geschetst, ik ben verder gegaan op mijn vorige concept. Toen had ik alleen nog statische foto's op de kaart, zonder interactie. Hieronder zie je mijn schetsen op papier en digitaal:
 
+<img src="https://user-images.githubusercontent.com/43337685/69818875-0155ff80-11fe-11ea-9fc0-35c0f0716a02.jpg" width=400>
+<img src="https://user-images.githubusercontent.com/43337685/69818877-01ee9600-11fe-11ea-98ed-e71c4492faaa.png" width=400>
 
 ## Data
 De data die ik heb gebruikt komt van https://collectie.wereldculturen.nl/. Dit is een verzameling van allerlei objecten over de hele wereld van vroeger. Deze data is enorm breed en kan variëren van maskers uit Afrika tot foto's van dansende mensen in Azië. 
