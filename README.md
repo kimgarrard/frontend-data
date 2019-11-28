@@ -1,25 +1,25 @@
 # Functional-programming
 
 ## Het concept
-Ik wil een wereldkaart maken, waarop alle foto's uit de collectie worden geplot. Je kunt hierdoor de foto's zien op de kaart, en zien waar ze zijn gemaakt. Later wil ik nog interactie toevoegen, dat je door de tijd kan klikken en dat je dan de foto's ziet veranderen. 
+Een wereldkaart waarop alle foto's uit de collectie worden geplot. Je kunt hierdoor de foto's zien op de kaart, en zien waar ze zijn gemaakt. Ook kun je over de foto's heen bewegen voor details en kun je door de tijd heen klikken. 
 
-<img width="1071" alt="Website" src="https://user-images.githubusercontent.com/43337685/68882923-5713ad80-0710-11ea-82e1-c6cbec8c3702.png">
+<img width="1680" alt="ScreenshotSite" src="https://user-images.githubusercontent.com/43337685/69807422-8aad0800-11e5-11ea-897e-8fca6d0ec6c2.png">
 
 ## Beschrijving
-Op de wereldkaart zie je per land één foto, die een beeld geeft van de collectie foto's van dit land. De doelgroep is heel breed, het kan eigenlijk voor iedereen leuk zijn om te zien. Omdat de foto's heel variërend zijn is het leuk om er naar te kijken. Omdat de foto's heel zwaar zijn, zie je hier 10 foto's. 
+Op de wereldkaart zie je per lattitude en longitude één foto, die een beeld geeft van de collectie foto's van dit gebied. De doelgroep is heel breed, het kan eigenlijk voor iedereen leuk zijn om te zien. Omdat de foto's heel variërend zijn is het leuk om er naar te kijken. Wanneer je met de muis over de foto's beweegt, zie je links op de pagina de details. Hier zie je de foto in het groot met de titel, de plaatsnaam met het land en het jaartal. Ook kun je door de tijd heen klikken, je ziet de foto's op de kaart dan veranderen en bovenaan zie je hoeveel foto's er uit die tijd zijn. Verder kun je ook in- en uitzoomen op de kaart. 
 
 ## Data
-
 De data die ik heb gebruikt komt van https://collectie.wereldculturen.nl/. Dit is een verzameling van allerlei objecten over de hele wereld van vroeger. Deze data is enorm breed en kan variëren van maskers uit Afrika tot foto's van dansende mensen in Azië. 
 
-Voor mijn eigen idee heb ik nodig
+Voor mijn eigen idee heb ik gebruikt
 * Objecten met type foto
 * Titel van deze objecten
 * Foto van de objecten
 * Longitude en latitude
 * Land waar ze vandaan komen
+* Jaartal van deze objecten
 
-Omdat er heel veel foto's zijn en er maar een beperkt aantal foto's kunnen worden ingeladen, heb ik mijn query zo geschreven dat er uit elk lan één object wordt opgehaald. Dit zorgt ervoor dat er veel verpreiding is over de hele kaart. 
+Mijn query heb ik zo geschreven dat deze alleen foto's bevat met een exact jaartal en met een unieke longitude en latitude, zodat de foto's goed over de kaart verspreid zijn. 
 
 ```sparql
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
