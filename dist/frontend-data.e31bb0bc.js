@@ -39762,7 +39762,7 @@ function cleanData(data) {
     result[key] = propValue.value;
   });
   return result;
-} //Nest the data per date
+} //Nest the data per dateRange
 
 
 function transformData(source) {
@@ -39836,18 +39836,7 @@ function filterByYear(results) {
 
 function plotImages(plottableImages) {
   console.log('plottableImages', plottableImages);
-  var images = g.selectAll('.images').data(plottableImages); //exit
-  //update
-
-  images.attr('xlink:href', function (d) {
-    return d.img;
-  }).attr('class', 'images').attr('x', function (d) {
-    return projection([d.long, d.lat])[0];
-  }).attr('y', function (d) {
-    return projection([d.long, d.lat])[1];
-  }).on("mouseover", function (d) {
-    return showDetails(d);
-  }).on("mouseout", hideDetails); //enter
+  var images = g.selectAll('.images').data(plottableImages); //enter
 
   images.enter() //dankzij hulp van Laurens
   .append('image').attr('xlink:href', function (d) {
@@ -39858,7 +39847,19 @@ function plotImages(plottableImages) {
     return projection([d.long, d.lat])[1];
   }).on("mouseover", function (d) {
     return showDetails(d);
+  }).on("mouseout", hideDetails); //update
+
+  images.attr('xlink:href', function (d) {
+    return d.img;
+  }).attr('class', 'images').attr('x', function (d) {
+    return projection([d.long, d.lat])[0];
+  }).attr('y', function (d) {
+    return projection([d.long, d.lat])[1];
+  }).on("mouseover", function (d) {
+    return showDetails(d);
   }).on("mouseout", hideDetails);
+  console.log('imagedDiv', imagesDiv); //exit
+
   images.exit().remove();
   console.log('enter update exit', images);
 }
@@ -39968,11 +39969,7 @@ function selectionChanged() {
   }
 
   if (year == 'Alle jaren') {
-    pNumber.text('Aantal fotos: ' + filteredData[4].amount); // newArray = filteredData.filter(result => {
-    // 	let test = result.key == 'Alle jaren'
-    // 	console.log('result', test)
-    // 	return result.key == 'Alle jaren'
-
+    pNumber.text('Aantal fotos: ' + filteredData[4].amount);
     newArray = data.filter(function (result) {
       return result;
     });
@@ -40019,7 +40016,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59506" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63320" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

@@ -142,7 +142,7 @@ function cleanData(data){
    return result
 }
 
-//Nest the data per date
+//Nest the data per dateRange
 function transformData(source){
   let transformed = d3.nest()
   	.key(function(d) { return d.dateRange; }).sortKeys(d3.ascending)
@@ -227,22 +227,6 @@ function plotImages(plottableImages) {
       .selectAll('.images')
       .data(plottableImages)
 
-		//exit
-
-
-		//update
-		images
-			.attr('xlink:href', d => d.img)
-			.attr('class', 'images')
-			.attr('x', function(d) {
-				return projection([d.long, d.lat])[0]
-			})
-			.attr('y', function(d) {
-				return projection([d.long, d.lat])[1]
-			})
-			.on("mouseover", d => showDetails(d))
-			.on("mouseout", hideDetails)
-
 		//enter
 		images
 		  .enter()
@@ -259,6 +243,22 @@ function plotImages(plottableImages) {
   			.on("mouseover", d => showDetails(d))
         .on("mouseout", hideDetails);
 
+		//update
+		images
+			.attr('xlink:href', d => d.img)
+			.attr('class', 'images')
+			.attr('x', function(d) {
+				return projection([d.long, d.lat])[0]
+			})
+			.attr('y', function(d) {
+				return projection([d.long, d.lat])[1]
+			})
+			.on("mouseover", d => showDetails(d))
+			.on("mouseout", hideDetails)
+
+		console.log('imagedDiv', imagesDiv)
+
+		//exit
 		images.exit().remove();
 
 		console.log('enter update exit', images)
@@ -406,11 +406,6 @@ function selectionChanged() {
 
 	if (year == 'Alle jaren') {
 		pNumber.text('Aantal fotos: ' + filteredData[4].amount)
-		// newArray = filteredData.filter(result => {
-		// 	let test = result.key == 'Alle jaren'
-		// 	console.log('result', test)
-		// 	return result.key == 'Alle jaren'
-
 			newArray = data.filter(result => {
 				return result
 		})
