@@ -39726,8 +39726,9 @@ function getData() {
           filteredData = transformData(data);
           console.log('after', data); //data = filterByYear(data)
           // data = setupInput(data, inputLabels)
+          // setupInput(data)
 
-          data = setupInput(data);
+          setupInput(filteredData);
           plotImages(data); //console.log('Schone Data:', data)
           //selectionChanged();
 
@@ -39765,12 +39766,15 @@ function cleanData(data) {
 
 
 function transformData(source) {
-  var transformed = d3.nest() // .key(function(d) { return d.landLabel; })
-  .key(function (d) {
+  var transformed = d3.nest().key(function (d) {
     return d.dateRange;
-  }).entries(source);
-  transformed.forEach(function (country) {
-    country.amount = country.values.length;
+  }).sortKeys(d3.ascending).entries(source);
+  transformed.push({
+    key: "Alle jaren",
+    values: source
+  });
+  transformed.forEach(function (yearRange) {
+    yearRange.amount = yearRange.values.length;
   });
   return transformed;
 } //Vervang 'http' door 'https'
@@ -39795,37 +39799,24 @@ function addDateRange() {
 function changeDateRange() {
   data.map(function (result) {
     if (result.dateRange > 1849 && result.dateRange < 1900) {
-      result.dateRange = result.dateRange.replace(result.dateRange, '1850 - 1899');
+      result.dateRange = result.dateRange.replace(result.dateRange, '1850 - 1900');
     }
 
     if (result.dateRange > 1899 && result.dateRange < 1950) {
-      result.dateRange = result.dateRange.replace(result.dateRange, '1900 - 1949');
+      result.dateRange = result.dateRange.replace(result.dateRange, '1900 - 1950');
     }
 
     if (result.dateRange > 1949 && result.dateRange < 2000) {
-      result.dateRange = result.dateRange.replace(result.dateRange, '1950 - 1999');
+      result.dateRange = result.dateRange.replace(result.dateRange, '1950 - 2000');
     }
 
     if (result.dateRange > 1999) {
       result.dateRange = result.dateRange.replace(result.dateRange, '2000 en later');
     }
   });
+  console.log("structure", data);
   return data;
-} // //Voeg een range van jaar toe aan de data
-// function addDateRange(data){
-//   data.map(result => {
-// 		result.dateRange = function() {
-// 		if (result.data == '1903') {
-// 			console.log("BOE!")
-// 			newArray = data.filter(result => {
-// 				return result.date < 1900
-// 			})
-// 		}
-// 		}
-//   })
-// 	return data
-// }
-
+}
 
 function drawMap() {
   (0, _d2.json)('https://unpkg.com/world-atlas@1.1.4/world/50m.json').then(function (data) {
@@ -39841,33 +39832,12 @@ function filterByYear(results) {
   });
   console.log('newArray: ', newArray);
   return newArray;
-} // function filterByYear(test) {
-// g
-// 	.data(test)
-//
-// 	console.log("data:", test);
-//
-// 	test.map(jaar => {
-// 	  if (jaar.date < 1900) {
-// 	    console.log('test: ', jaar);
-// 			return jaar;
-// 			// test = jaar;
-// 	  }
-// 		// return test;
-// 	})
-//
-// test = jaar;
-// console.log("TEST:", test);
-// // return test;
-//
-// }
-
+}
 
 function plotImages(plottableImages) {
   console.log('plottableImages', plottableImages);
-  var images = g.selectAll('imageDiv').data(plottableImages); //exit
-
-  g.selectAll('image').remove(); //update
+  var images = g.selectAll('.images').data(plottableImages); //exit
+  //update
 
   images.attr('xlink:href', function (d) {
     return d.img;
@@ -39889,6 +39859,7 @@ function plotImages(plottableImages) {
   }).on("mouseover", function (d) {
     return showDetails(d);
   }).on("mouseout", hideDetails);
+  images.exit().remove();
   console.log('enter update exit', images);
 }
 
@@ -39942,16 +39913,17 @@ svg.call((0, _d2.zoom)().on('zoom', function () {
 //Voorbeeld van Laurens
 // https://beta.vizhub.com/Razpudding/4a61de4a4034423a98ae79d0135781f7?edit=files&file=index.js
 
-function setupInput() {
-  var form = d3.select('form').append('select').attr('class', 'select-css').on('change', selectionChanged).selectAll('option').data(filteredData) // console.log(d)
-  .enter().append('option').attr('value', function (d) {
+function setupInput(yearsArray) {
+  var form = d3.select('form').select('select') //.attr('class', 'select-css')
+  .on('change', selectionChanged).selectAll('option').data(yearsArray) //.enter()
+  //.append('option')
+  //.attr('class', 'option')
+  // <option value="" disabled selected>Select your option</option>
+  .attr('value', function (d) {
     return d.key;
   }).text(function (d) {
     return d.key;
-  }); // console.log("form",form)
-  //.data(data)
-
-  console.log('data', data);
+  });
   return data;
 } //This function will change the graph when the user selects another variable
 
@@ -39967,24 +39939,24 @@ function selectionChanged() {
   console.log('testestrest', filteredData);
   console.log('this', this);
 
-  if (year == '1850 - 1899') {
-    pNumber.text('Aantal fotos: ' + filteredData[2].amount);
-    newArray = data.filter(function (result) {
-      return result.dateRange == '1850 - 1899';
-    });
-  }
-
-  if (year == '1900 - 1949') {
+  if (year == '1850 - 1900') {
     pNumber.text('Aantal fotos: ' + filteredData[0].amount);
     newArray = data.filter(function (result) {
-      return result.dateRange == '1900 - 1949';
+      return result.dateRange == '1850 - 1900';
     });
   }
 
-  if (year == '1950 - 1999') {
+  if (year == '1900 - 1950') {
     pNumber.text('Aantal fotos: ' + filteredData[1].amount);
     newArray = data.filter(function (result) {
-      return result.dateRange == '1950 - 1999';
+      return result.dateRange == '1900 - 1950';
+    });
+  }
+
+  if (year == '1950 - 2000') {
+    pNumber.text('Aantal fotos: ' + filteredData[2].amount);
+    newArray = data.filter(function (result) {
+      return result.dateRange == '1950 - 2000';
     });
   }
 
@@ -39992,6 +39964,17 @@ function selectionChanged() {
     pNumber.text('Aantal fotos: ' + filteredData[3].amount);
     newArray = data.filter(function (result) {
       return result.dateRange == '2000 en later';
+    });
+  }
+
+  if (year == 'Alle jaren') {
+    pNumber.text('Aantal fotos: ' + filteredData[4].amount); // newArray = filteredData.filter(result => {
+    // 	let test = result.key == 'Alle jaren'
+    // 	console.log('result', test)
+    // 	return result.key == 'Alle jaren'
+
+    newArray = data.filter(function (result) {
+      return result;
     });
   }
 
@@ -40036,7 +40019,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59226" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59506" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
