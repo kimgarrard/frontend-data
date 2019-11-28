@@ -2,12 +2,16 @@
 [![Netlify Status](https://api.netlify.com/api/v1/badges/975fc1ed-9d0d-49ac-babf-37d17f8720dc/deploy-status)](https://app.netlify.com/sites/thirsty-keller-e65b29/deploys)
 
 ## Het concept
-Een wereldkaart waarop alle foto's uit de collectie worden geplot. Je kunt hierdoor de foto's zien op de kaart, en zien waar ze zijn gemaakt. Ook kun je over de foto's heen bewegen voor details en kun je door de tijd heen klikken. 
+Een wereldkaart waarop alle foto's uit de collectie worden geplot. Je kunt hierdoor de foto's zien op de kaart, en zien waar ze zijn gemaakt. Ook kun je over de foto's heen bewegen voor details en kun je door de tijd heen klikken. Hieronder een screenshot van mijn website:
 
 <img width="1680" alt="ScreenshotSite" src="https://user-images.githubusercontent.com/43337685/69807422-8aad0800-11e5-11ea-897e-8fca6d0ec6c2.png">
 
 ## Beschrijving
-Op de wereldkaart zie je per lattitude en longitude één foto, die een beeld geeft van de collectie foto's van dit gebied. De doelgroep is heel breed, het kan eigenlijk voor iedereen leuk zijn om te zien. Omdat de foto's heel variërend zijn is het leuk om er naar te kijken. Wanneer je met de muis over de foto's beweegt, zie je links op de pagina de details. Hier zie je de foto in het groot met de titel, de plaatsnaam met het land en het jaartal. Ook kun je door de tijd heen klikken, je ziet de foto's op de kaart dan veranderen en bovenaan zie je hoeveel foto's er uit die tijd zijn. Verder kun je ook in- en uitzoomen op de kaart. 
+Op de wereldkaart zie je foto's uit de collectie op de kaart geplot. De doelgroep is heel breed, het kan eigenlijk voor iedereen leuk zijn om te zien. Omdat de foto's heel variërend zijn is het leuk om er naar te kijken. Wanneer je met de muis over de foto's beweegt, zie je links op de pagina de details. Hier zie je de foto in het groot met de titel, de plaatsnaam met het land en het jaartal. Ook kun je door de tijd heen klikken, je ziet de foto's op de kaart dan veranderen en bovenaan zie je hoeveel foto's er uit die tijd zijn. Verder kun je ook in- en uitzoomen op de kaart. 
+
+### Schetsen
+Voor mijn idee heb ik ook geschetst, ik ben verder gegaan op mijn vorige concept. Toen had ik alleen nog statische foto's op de kaart, zonder interactie. Hieronder zie je mijn schetsen op papier en digitaal:
+
 
 ## Data
 De data die ik heb gebruikt komt van https://collectie.wereldculturen.nl/. Dit is een verzameling van allerlei objecten over de hele wereld van vroeger. Deze data is enorm breed en kan variëren van maskers uit Afrika tot foto's van dansende mensen in Azië. 
@@ -75,6 +79,9 @@ WHERE {
 
 } GROUP BY ?title 
 ```
+
+## D3
+HIER NOG SCHRIJVEN
 
 ### Lege waardes
 Er komen geen lege waardes uit de data zelf. Elke foto heeft een titel, een afbeelding, een jaartal, een longitude & latitude en een land. Niet alle plaatsen / landen hebben een object, dit zou je ook kunnen zien als lege waardes. Bij deze plaatsen laat ik de foto niet zien op de kaart. 
