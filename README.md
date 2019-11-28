@@ -84,7 +84,7 @@ De data die uit deze query komt heb ik ook opgeschoond. Zo heb ik ervoor gezorgd
 
 De data ziet er in mijn console log als volgt uit:
 
-GOEDE IMAGE NOG PLAATSEN!!
+<img width="499" alt="DataConsole" src="https://user-images.githubusercontent.com/43337685/69813223-0a40d400-11f2-11ea-905d-bccffe9171eb.png">
 
 ## Features
 - [x] Foto's geplot op een wereldkaart
