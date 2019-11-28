@@ -1,4 +1,5 @@
 # Functional-programming
+[![Netlify Status](https://api.netlify.com/api/v1/badges/975fc1ed-9d0d-49ac-babf-37d17f8720dc/deploy-status)](https://app.netlify.com/sites/thirsty-keller-e65b29/deploys)
 
 ## Het concept
 Een wereldkaart waarop alle foto's uit de collectie worden geplot. Je kunt hierdoor de foto's zien op de kaart, en zien waar ze zijn gemaakt. Ook kun je over de foto's heen bewegen voor details en kun je door de tijd heen klikken. 
@@ -19,7 +20,7 @@ Voor mijn eigen idee heb ik gebruikt
 * Land waar ze vandaan komen
 * Jaartal van deze objecten
 
-Mijn query heb ik zo geschreven dat deze alleen foto's bevat met een exact jaartal en met een unieke longitude en latitude, zodat de foto's goed over de kaart verspreid zijn. 
+Mijn query heb ik zo geschreven dat deze alleen foto's bevat met een exact jaartal. Ook heb ik group by title gedaan, omdat hierdoor alleen unieke foto's tevoorschein komen. 
 
 ```sparql
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
@@ -35,54 +36,61 @@ PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX gn: <http://www.geonames.org/ontology#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-
-# een foto per land (met type, img, lat en long van de plaats
-SELECT  (SAMPLE(?cho) AS ?cho) 
-	(SAMPLE(?title) AS ?title) 
-        (SAMPLE(?typeLabel) AS ?type) 
-        (SAMPLE(?img) AS ?img) 
-        (SAMPLE(?lat) AS ?lat)
-        (SAMPLE(?long) AS ?long)
-        ?landLabel 
+# een foto per lat long (met type, img, lat en long van de plaats
+SELECT  (SAMPLE(?cho) AS ?cho)
+	?title
+        (SAMPLE(?title) AS ?title)
+        (SAMPLE(?typeLabel) AS ?type)
+        (SAMPLE(?img) AS ?img)
+	(SAMPLE(?placeName) AS ?placeName)
+        (SAMPLE(?landLabel) AS ?landLabel)
+	(SAMPLE(?date) AS ?date)
+	(SAMPLE(?lat) AS ?lat)
+	(SAMPLE(?long) AS ?long)
 
 WHERE {
-  # vind alleen foto's
-  <https://hdl.handle.net/20.500.11840/termmaster1397> skos:narrower* ?type .
-  ?type skos:prefLabel ?typeLabel .   
-  ?cho edm:object ?type .
+ # vind alleen foto's
+ <https://hdl.handle.net/20.500.11840/termmaster1397> skos:narrower* ?type .
+ ?type skos:prefLabel ?typeLabel .
+ ?cho edm:object ?type .
 
-  # ?cho dc:title ?title .
-  ?cho edm:isShownBy ?img .
-  ?cho dc:title ?title .
+ ?cho edm:isShownBy ?img .
+ ?cho dc:title ?title .
 
-  # vind bij de objecten het land
-  ?cho dct:spatial ?place .
-  ?place skos:exactMatch/gn:parentCountry ?land .
-  # ?place skos:prefLabel ?placeName .
-  ?land gn:name ?landLabel .
-  
-  # vind bij de plaats van de foto de lat/long
-  ?place skos:exactMatch/wgs84:lat ?lat .
-  ?place skos:exactMatch/wgs84:long ?long .      
+ # vind bij de plaats van de foto de lat/long
+ ?cho dct:spatial ?place .
+ ?place skos:prefLabel ?placeName .
+ ?place skos:exactMatch/wgs84:lat ?lat .
+ ?place skos:exactMatch/wgs84:long ?long .
 
-} GROUP BY ?landLabel
-ORDER BY ?landLabel 
+ # vind bij de plaats het land
+ ?place skos:exactMatch/gn:parentCountry ?land .
+ ?land gn:name ?landLabel .
+
+ ?cho dct:created ?date .
+ BIND (xsd:gYear(?date) AS ?year) .
+ FILTER (?year < xsd:gYear("2100"))
+
+ FILTER langMatches(lang(?title), "ned")
+
+} GROUP BY ?title 
 ```
 
 ### Lege waardes
-Mijn data is dus verdeeld in één foto per land, er komen geen lege waardes uit de data zelf. Elke foto heeft een titel, een afbeelding, een longitude & latitude en een land. Wel zijn er niet van alle landen ook objecten, dit zou je ook kunnen zien als lege waardes. Bij deze landen laat ik het plaatje niet zien op de kaart. 
+Er komen geen lege waardes uit de data zelf. Elke foto heeft een titel, een afbeelding, een jaartal, een longitude & latitude en een land. Niet alle plaatsen / landen hebben een object, dit zou je ook kunnen zien als lege waardes. Bij deze plaatsen laat ik de foto niet zien op de kaart. 
 
-## Data opgeschoond
+## Data opgeschoond en genest
+De data die uit deze query komt heb ik ook opgeschoond. Zo heb ik ervoor gezorgd dat voor alle images 'https' komt te staan, in plaats van 'http'. Ook heb ik een nieuwe key aangemaakt, namelijke dateRange. Dit is een range waar het jaartal binnenvalt. De data heb ik weer genest met als key de dateRange. 
 
-De data die uit deze query komt heb ik ook opgeschoond. Zo heb ik ervoor gezorgd dat de nesting beter is en zorg ik dat er voor alle images 'https' komt te staan, in plaats van 'http'. De data ziet er in mijn console log als volgt uit:
+De data ziet er in mijn console log als volgt uit:
 
-<img width="652" alt="DataQuery" src="https://user-images.githubusercontent.com/43337685/68883516-81199f80-0711-11ea-90ad-dbd05bb0e963.png">
+GOEDE IMAGE NOG PLAATSEN!!
 
 ## Features
-
 - [x] Foto's geplot op een wereldkaart
-- [ ] Klikken door de tijd, je ziet de verandering van de foto's
-- [ ] Klikken op de foto's, je ziet de foto groot met een title en beschrijving 
+- [x] Hoveren over de foto's, je ziet de foto groot met een titel, plaats en jaartal.
+- [x] Klikken door de tijd, je ziet de verandering van de foto's
+- [x] In- en uitzoomen op de kaart
 
 ## Bronnen
 * [Clean Data](https://www.freecodecamp.org/news/the-junior-developers-guide-to-writing-super-clean-and-readable-code-cd2568e08aae/)
@@ -94,6 +102,8 @@ De data die uit deze query komt heb ik ook opgeschoond. Zo heb ik ervoor gezorgd
 
 ## Credits
 * Laurens, code van D3
+* Lennart, hulp met parcel en netlify
+* Kris, hulp met pushen naar github via Command Line
 * Manouk
 
 ## Wat ik heb geleerd
@@ -101,3 +111,5 @@ De data die uit deze query komt heb ik ook opgeschoond. Zo heb ik ervoor gezorgd
 * SPARQL meer leren
 * Werken met D3
 * Meer javascript kennis
+* Werken met parcel
+* Github pushen met Command Line
