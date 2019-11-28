@@ -2,7 +2,7 @@
 /*eslint-env browser*/
 /*eslint 'no-console':0*/
 
-import "babel-polyfill"
+import "babel-polyfill";
 import { select, json, geoPath, geoNaturalEarth1, zoom, event } from 'd3';
 import { feature } from 'topojson';
 
