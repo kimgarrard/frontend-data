@@ -256,8 +256,6 @@ function plotImages(plottableImages) {
 			.on("mouseover", d => showDetails(d))
 			.on("mouseout", hideDetails)
 
-		console.log('imagedDiv', imagesDiv)
-
 		//exit
 		images.exit().remove();
 
