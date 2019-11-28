@@ -15,6 +15,25 @@ Voor mijn idee heb ik ook geschetst, ik ben verder gegaan op mijn vorige concept
 <img src="https://user-images.githubusercontent.com/43337685/69818875-0155ff80-11fe-11ea-9fc0-35c0f0716a02.jpg" width=400>
 <img src="https://user-images.githubusercontent.com/43337685/69818877-01ee9600-11fe-11ea-98ed-e71c4492faaa.png" width=400>
 
+## Installatie D3
+In je html kun je het volgende schrijven om D3 te gebruiken:
+```html
+  <head>
+    <script src="https://unpkg.com/d3@5.11.0/dist/d3.min.js"></script>
+    <script src="https://unpkg.com/topojson@3.0.2/dist/topojson.min.js"></script>
+  </head>
+```
+
+Vervolgens kun je in je javascript modules van D3 importeren. 
+
+Als je mijn project wil gebruiken kun je het volgende in de command line invoeren:
+
+```
+git clone https://github.com/kimgarrard/frontend-data.git
+```
+
+Je kunt ook rechtsboven op clone or download klikken. 
+
 ## Data
 De data die ik heb gebruikt komt van https://collectie.wereldculturen.nl/. Dit is een verzameling van allerlei objecten over de hele wereld van vroeger. Deze data is enorm breed en kan variëren van maskers uit Afrika tot foto's van dansende mensen in Azië. 
 
@@ -81,9 +100,6 @@ WHERE {
 
 } GROUP BY ?title 
 ```
-
-## D3
-HIER NOG SCHRIJVEN
 
 ### Lege waardes
 Er komen geen lege waardes uit de data zelf. Elke foto heeft een titel, een afbeelding, een jaartal, een longitude & latitude en een land. Niet alle plaatsen / landen hebben een object, dit zou je ook kunnen zien als lege waardes. Bij deze plaatsen laat ik de foto niet zien op de kaart. 
