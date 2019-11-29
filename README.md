@@ -2,12 +2,37 @@
 [![Netlify Status](https://api.netlify.com/api/v1/badges/975fc1ed-9d0d-49ac-babf-37d17f8720dc/deploy-status)](https://app.netlify.com/sites/thirsty-keller-e65b29/deploys)
 
 ## Het concept
-Een wereldkaart waarop alle foto's uit de collectie worden geplot. Je kunt hierdoor de foto's zien op de kaart, en zien waar ze zijn gemaakt. Ook kun je over de foto's heen bewegen voor details en kun je door de tijd heen klikken. 
+Een wereldkaart waarop alle foto's uit de collectie worden geplot. Je kunt hierdoor de foto's zien op de kaart, en zien waar ze zijn gemaakt. Ook kun je over de foto's heen bewegen voor details en kun je door de tijd heen klikken. Hieronder een screenshot van mijn website:
 
 <img width="1680" alt="ScreenshotSite" src="https://user-images.githubusercontent.com/43337685/69807422-8aad0800-11e5-11ea-897e-8fca6d0ec6c2.png">
 
 ## Beschrijving
-Op de wereldkaart zie je per lattitude en longitude één foto, die een beeld geeft van de collectie foto's van dit gebied. De doelgroep is heel breed, het kan eigenlijk voor iedereen leuk zijn om te zien. Omdat de foto's heel variërend zijn is het leuk om er naar te kijken. Wanneer je met de muis over de foto's beweegt, zie je links op de pagina de details. Hier zie je de foto in het groot met de titel, de plaatsnaam met het land en het jaartal. Ook kun je door de tijd heen klikken, je ziet de foto's op de kaart dan veranderen en bovenaan zie je hoeveel foto's er uit die tijd zijn. Verder kun je ook in- en uitzoomen op de kaart. 
+Op de wereldkaart zie je foto's uit de collectie op de kaart geplot. De doelgroep is heel breed, het kan eigenlijk voor iedereen leuk zijn om te zien. Omdat de foto's heel variërend zijn is het leuk om er naar te kijken. Wanneer je met de muis over de foto's beweegt, zie je links op de pagina de details. Hier zie je de foto in het groot met de titel, de plaatsnaam met het land en het jaartal. Ook kun je door de tijd heen klikken, je ziet de foto's op de kaart dan veranderen en bovenaan zie je hoeveel foto's er uit die tijd zijn. Verder kun je ook in- en uitzoomen op de kaart. 
+
+### Schetsen
+Voor mijn idee heb ik ook geschetst, ik ben verder gegaan op mijn vorige concept. Toen had ik alleen nog statische foto's op de kaart, zonder interactie. Hieronder zie je mijn schetsen op papier en digitaal:
+
+<img src="https://user-images.githubusercontent.com/43337685/69818875-0155ff80-11fe-11ea-9fc0-35c0f0716a02.jpg" width=400>
+<img src="https://user-images.githubusercontent.com/43337685/69818877-01ee9600-11fe-11ea-98ed-e71c4492faaa.png" width=400>
+
+## Installatie D3
+In je html kun je het volgende schrijven om D3 te gebruiken:
+```html
+  <head>
+    <script src="https://unpkg.com/d3@5.11.0/dist/d3.min.js"></script>
+    <script src="https://unpkg.com/topojson@3.0.2/dist/topojson.min.js"></script>
+  </head>
+```
+
+Vervolgens kun je in je javascript modules van D3 importeren. 
+
+Als je mijn project wil gebruiken kun je het volgende in de command line invoeren:
+
+```
+git clone https://github.com/kimgarrard/frontend-data.git
+```
+
+Je kunt ook rechtsboven op clone or download klikken. 
 
 ## Data
 De data die ik heb gebruikt komt van https://collectie.wereldculturen.nl/. Dit is een verzameling van allerlei objecten over de hele wereld van vroeger. Deze data is enorm breed en kan variëren van maskers uit Afrika tot foto's van dansende mensen in Azië. 
