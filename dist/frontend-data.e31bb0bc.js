@@ -39675,14 +39675,7 @@ function _iterableToArrayLimit(arr, i) { if (!(Symbol.iterator in Object(arr) ||
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
-var query = "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX dc: <http://purl.org/dc/elements/1.1/>\nPREFIX dct: <http://purl.org/dc/terms/>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX edm: <http://www.europeana.eu/schemas/edm/>\nPREFIX foaf: <http://xmlns.com/foaf/0.1/>\nPREFIX hdlh: <https://hdl.handle.net/20.500.11840/termmaster>\nPREFIX wgs84: <http://www.w3.org/2003/01/geo/wgs84_pos#>\nPREFIX geo: <http://www.opengis.net/ont/geosparql#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX gn: <http://www.geonames.org/ontology#>\nPREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\n# een foto per lat long (met type, img, lat en long van de plaats\nSELECT  (SAMPLE(?cho) AS ?cho)\n\t\t?title\n       #(SAMPLE(?title) AS ?title)\n        (SAMPLE(?typeLabel) AS ?type)\n        (SAMPLE(?img) AS ?img)\n\t\t\t\t(SAMPLE(?placeName) AS ?placeName)\n        (SAMPLE(?landLabel) AS ?landLabel)\n\t\t\t\t(SAMPLE(?date) AS ?date)\n\t\t\t\t(SAMPLE(?lat) AS ?lat)\n\t\t\t\t(SAMPLE(?long) AS ?long)\n\nWHERE {\n # vind alleen foto's\n <https://hdl.handle.net/20.500.11840/termmaster1397> skos:narrower* ?type .\n ?type skos:prefLabel ?typeLabel .\n ?cho edm:object ?type .\n\n ?cho edm:isShownBy ?img .\n ?cho dc:title ?title .\n\n # vind bij de plaats van de foto de lat/long\n ?cho dct:spatial ?place .\n ?place skos:exactMatch/wgs84:lat ?lat .\n ?place skos:exactMatch/wgs84:long ?long .\n\n # vind bij de plaats van de het land\n ?place skos:exactMatch/gn:parentCountry ?land .\n ?place skos:prefLabel ?placeName .\n ?land gn:name ?landLabel .\n\n ?cho dct:created ?date .\n BIND (xsd:gYear(?date) AS ?year) .\n FILTER (?year < xsd:gYear(\"2100\"))\n\n FILTER langMatches(lang(?title), \"ned\")\n\n} GROUP BY ?title\nLIMIT 200";
-var inputLabels = [{
-  year: '1850 - 1900'
-}, {
-  year: '1900 - 1950'
-}, {
-  year: '1950 - 2000'
-}];
+var query = "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX dc: <http://purl.org/dc/elements/1.1/>\nPREFIX dct: <http://purl.org/dc/terms/>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX edm: <http://www.europeana.eu/schemas/edm/>\nPREFIX foaf: <http://xmlns.com/foaf/0.1/>\nPREFIX hdlh: <https://hdl.handle.net/20.500.11840/termmaster>\nPREFIX wgs84: <http://www.w3.org/2003/01/geo/wgs84_pos#>\nPREFIX geo: <http://www.opengis.net/ont/geosparql#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX gn: <http://www.geonames.org/ontology#>\nPREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\n# een foto per lat long (met type, img, lat en long van de plaats\nSELECT  (SAMPLE(?cho) AS ?cho)\n\t\t\t\t?title\n        (SAMPLE(?typeLabel) AS ?type)\n        (SAMPLE(?img) AS ?img)\n\t\t\t\t(SAMPLE(?placeName) AS ?placeName)\n        (SAMPLE(?landLabel) AS ?landLabel)\n\t\t\t\t(SAMPLE(?date) AS ?date)\n\t\t\t\t(SAMPLE(?lat) AS ?lat)\n\t\t\t\t(SAMPLE(?long) AS ?long)\n\nWHERE {\n # vind alleen foto's\n <https://hdl.handle.net/20.500.11840/termmaster1397> skos:narrower* ?type .\n ?type skos:prefLabel ?typeLabel .\n ?cho edm:object ?type .\n\n ?cho edm:isShownBy ?img .\n ?cho dc:title ?title .\n\n # vind bij de plaats van de foto de lat/long\n ?cho dct:spatial ?place .\n ?place skos:exactMatch/wgs84:lat ?lat .\n ?place skos:exactMatch/wgs84:long ?long .\n\n # vind bij de plaats van de het land\n ?place skos:exactMatch/gn:parentCountry ?land .\n ?place skos:prefLabel ?placeName .\n ?land gn:name ?landLabel .\n\n ?cho dct:created ?date .\n BIND (xsd:gYear(?date) AS ?year) .\n FILTER (?year < xsd:gYear(\"2100\"))\n\n FILTER langMatches(lang(?title), \"ned\")\n\n} GROUP BY ?title\nLIMIT 200";
 var endpoint = "https://api.data.netwerkdigitaalerfgoed.nl/datasets/ivo/NMVW/services/NMVW-06/sparql";
 var svg = (0, _d2.select)('svg');
 var svgDiv = (0, _d2.select)('.svgDiv');
@@ -39694,15 +39687,10 @@ var pathGenerator = (0, _d2.geoPath)().projection(projection);
 var g = svg.append('g'); //functies setupMap() en drawMap() van Laurens
 //https://beta.vizhub.com/Razpudding/6b3c5d10edba4c86babf4b6bc204c5f0
 
-drawMap(); // zoomToMap()
-
+drawMap();
 getData();
 var data;
-var filteredData; // const height = 500;
-// const width = 800;
-// svg
-//  .attr(“viewBox”, “90 0 ” + width + ” ” + height)
-//Alle data functies aanroepen
+var filteredData; //Alle data functies aanroepen
 //Code van Laurens
 //https://beta.vizhub.com/Razpudding/2e039bf6e39a421180741285a8f735a3
 
@@ -39762,21 +39750,6 @@ function cleanData(data) {
     result[key] = propValue.value;
   });
   return result;
-} //Nest the data per dateRange
-
-
-function transformData(source) {
-  var transformed = d3.nest().key(function (d) {
-    return d.dateRange;
-  }).sortKeys(d3.ascending).entries(source);
-  transformed.push({
-    key: "Alle jaren",
-    values: source
-  });
-  transformed.forEach(function (yearRange) {
-    yearRange.amount = yearRange.values.length;
-  });
-  return transformed;
 } //Vervang 'http' door 'https'
 
 
@@ -39816,6 +39789,21 @@ function changeDateRange() {
   });
   console.log("structure", data);
   return data;
+} //Nest the data per dateRange
+
+
+function transformData(source) {
+  var transformed = d3.nest().key(function (d) {
+    return d.dateRange;
+  }).sortKeys(d3.ascending).entries(source);
+  transformed.push({
+    key: "Alle jaren",
+    values: source
+  });
+  transformed.forEach(function (yearRange) {
+    yearRange.amount = yearRange.values.length;
+  });
+  return transformed;
 }
 
 function drawMap() {
@@ -39876,41 +39864,7 @@ function hideDetails() {
 
 svg.call((0, _d2.zoom)().on('zoom', function () {
   g.attr('transform', _d2.event.transform);
-})); // window.onload = function(){
-// 		var schema = {
-// 				fields: [
-// 						{type: 'dropdown', display: 'Country',
-// 								values: ['1850 - 1900', '1900 - 1950', '1950 - 2000']
-// 						}
-// 				]
-// 		};
-//
-// 		var form = d3.select("form");
-//
-// 		var p = form.selectAll("p")
-// 				.data(schema.fields)
-// 				.enter()
-// 				.append("p")
-// 				.each(function(d){
-// 						var self = d3.select(this);
-// 						var label = self.append("label")
-// 								.text(d.display)
-// 								.style("width", "100px")
-// 								.style("display", "inline-block");
-//
-// 						if(d.type == 'dropdown'){
-// 						var select = self.append("select")
-// 										.attr("name", "country")
-// 										.selectAll("option")
-// 										.data(d.values)
-// 										.enter()
-// 										.append("option")
-// 										.text(function(d) { return d; });
-// 						}
-//
-// 				});
-// }
-//Voorbeeld van Laurens
+})); //Voorbeeld van Laurens
 // https://beta.vizhub.com/Razpudding/4a61de4a4034423a98ae79d0135781f7?edit=files&file=index.js
 
 function setupInput(yearsArray) {
@@ -39977,16 +39931,28 @@ function selectionChanged() {
   plotImages(newArray);
   console.log('newArray: ', newArray);
   return newArray;
-} // function filterByYear(results) {
-// //Hulp van Coen
-// let newArray = results.filter(result => {
-// 	return result.date < 1900
-// })
-//
-// console.log('newArray: ', newArray)
-//
-// return newArray
-// }
+}
+
+showUitleg();
+hideUitleg();
+
+function showUitleg() {
+  var buttonUitleg = document.querySelector(".buttonUitleg");
+  var uitleg = document.querySelector(".uitleg");
+
+  buttonUitleg.onclick = function () {
+    uitleg.classList.remove("invisible");
+  };
+}
+
+function hideUitleg() {
+  var buttonCloseUitleg = document.querySelector(".buttonSluiten");
+  var uitleg = document.querySelector(".uitleg");
+
+  buttonCloseUitleg.onclick = function () {
+    uitleg.classList.add("invisible");
+  };
+}
 },{"babel-polyfill":"node_modules/babel-polyfill/lib/index.js","d3":"node_modules/d3/index.js","topojson":"node_modules/topojson/index.js"}],"../../.nvm/versions/node/v12.12.0/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -40015,7 +39981,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63882" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53341" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

@@ -21,8 +21,7 @@ PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 # een foto per lat long (met type, img, lat en long van de plaats
 SELECT  (SAMPLE(?cho) AS ?cho)
-		?title
-       #(SAMPLE(?title) AS ?title)
+				?title
         (SAMPLE(?typeLabel) AS ?type)
         (SAMPLE(?img) AS ?img)
 				(SAMPLE(?placeName) AS ?placeName)
@@ -60,21 +59,6 @@ WHERE {
 LIMIT 200`
 
 
-
-const inputLabels = [
-  {
-    year: '1850 - 1900'
-  },
-  {
-    year: '1900 - 1950'
-  },
-  {
-    year: '1950 - 2000'
-  }
-];
-
-
-
 const endpoint = "https://api.data.netwerkdigitaalerfgoed.nl/datasets/ivo/NMVW/services/NMVW-06/sparql"
 
 const svg = select('svg')
@@ -90,15 +74,9 @@ const g = svg.append('g');
 //functies setupMap() en drawMap() van Laurens
 //https://beta.vizhub.com/Razpudding/6b3c5d10edba4c86babf4b6bc204c5f0
 drawMap()
-// zoomToMap()
 getData()
 let data;
 let filteredData
-
-// const height = 500;
-// const width = 800;
-// svg
-//  .attr(“viewBox”, “90 0 ” + width + ” ” + height)
 
 //Alle data functies aanroepen
 //Code van Laurens
@@ -142,18 +120,6 @@ function cleanData(data){
    return result
 }
 
-//Nest the data per dateRange
-function transformData(source){
-  let transformed = d3.nest()
-  	.key(function(d) { return d.dateRange; }).sortKeys(d3.ascending)
-		.entries(source);
-	transformed.push({ key: "Alle jaren", values: source, })
-  transformed.forEach(yearRange => {
-    yearRange.amount = yearRange.values.length
-  })
-  return transformed
-}
-
 //Vervang 'http' door 'https'
 function changeImageURL(results){
   results.map(result => {
@@ -193,6 +159,18 @@ function changeDateRange(){
 	return data
 }
 
+//Nest the data per dateRange
+function transformData(source){
+  let transformed = d3.nest()
+  	.key(function(d) { return d.dateRange; }).sortKeys(d3.ascending)
+		.entries(source);
+	transformed.push({ key: "Alle jaren", values: source, })
+  transformed.forEach(yearRange => {
+    yearRange.amount = yearRange.values.length
+  })
+  return transformed
+}
+
 function drawMap() {
   json('https://unpkg.com/world-atlas@1.1.4/world/50m.json').then(data => {
     const countries = feature(data, data.objects.countries);
@@ -216,7 +194,6 @@ console.log('newArray: ', newArray)
 
 return newArray
 }
-
 
 
 function plotImages(plottableImages) {
@@ -297,48 +274,6 @@ svg.call(zoom().on('zoom', () => {
   g.attr('transform', event.transform);
 }))
 
-
-
-// window.onload = function(){
-// 		var schema = {
-// 				fields: [
-// 						{type: 'dropdown', display: 'Country',
-// 								values: ['1850 - 1900', '1900 - 1950', '1950 - 2000']
-// 						}
-// 				]
-// 		};
-//
-// 		var form = d3.select("form");
-//
-// 		var p = form.selectAll("p")
-// 				.data(schema.fields)
-// 				.enter()
-// 				.append("p")
-// 				.each(function(d){
-// 						var self = d3.select(this);
-// 						var label = self.append("label")
-// 								.text(d.display)
-// 								.style("width", "100px")
-// 								.style("display", "inline-block");
-//
-// 						if(d.type == 'dropdown'){
-// 						var select = self.append("select")
-// 										.attr("name", "country")
-// 										.selectAll("option")
-// 										.data(d.values)
-// 										.enter()
-// 										.append("option")
-// 										.text(function(d) { return d; });
-// 						}
-//
-// 				});
-// }
-
-
-
-
-
-
 //Voorbeeld van Laurens
 // https://beta.vizhub.com/Razpudding/4a61de4a4034423a98ae79d0135781f7?edit=files&file=index.js
 function setupInput(yearsArray){
@@ -418,16 +353,23 @@ function selectionChanged() {
 }
 
 
+showUitleg()
+hideUitleg()
 
+function showUitleg() {
+	let buttonUitleg = document.querySelector(".buttonUitleg");
+	let uitleg = document.querySelector(".uitleg");
 
+	buttonUitleg.onclick = function() {
+     uitleg.classList.remove("invisible")
+    }
+}
 
-// function filterByYear(results) {
-// //Hulp van Coen
-// let newArray = results.filter(result => {
-// 	return result.date < 1900
-// })
-//
-// console.log('newArray: ', newArray)
-//
-// return newArray
-// }
+function hideUitleg() {
+	let buttonCloseUitleg = document.querySelector(".buttonSluiten");
+	let uitleg = document.querySelector(".uitleg");
+
+	buttonCloseUitleg.onclick = function() {
+     uitleg.classList.add("invisible")
+    }
+}
