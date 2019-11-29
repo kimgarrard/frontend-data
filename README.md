@@ -117,6 +117,11 @@ De data ziet er in mijn console log als volgt uit:
 - [x] Klikken door de tijd, je ziet de verandering van de foto's
 - [x] In- en uitzoomen op de kaart
 
+## Wat ik nog had willen doen
+- [ ] Mooiere kaart
+- [ ] Max. bij uitzoomen 
+- [ ] Images in cache
+
 ## Bronnen
 * [YouTube tutorial D3 - enter, update, exit](https://www.youtube.com/watch?v=IyIAR65G-GQ&list=PL9yYRbwpkykvOXrZumtZWbuaXWHvjD8gi&index=12)
 * [YouTube tutorial D3 - Interaction](https://www.youtube.com/watch?v=9ZB1EgaJnBU)
