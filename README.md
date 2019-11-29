@@ -1,4 +1,4 @@
-# Functional-programming
+# Frontend-Data
 [![Netlify Status](https://api.netlify.com/api/v1/badges/975fc1ed-9d0d-49ac-babf-37d17f8720dc/deploy-status)](https://app.netlify.com/sites/thirsty-keller-e65b29/deploys)
 
 ## Het concept
