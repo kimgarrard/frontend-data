@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "babel-polyfill": "^6.26.0",
-    "d3": "^5.14.2",
+    "d3": "^7.6.1",
     "topojson": "^3.0.2"
   }
 }
